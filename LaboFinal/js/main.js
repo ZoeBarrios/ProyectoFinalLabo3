@@ -1,21 +1,24 @@
 import { createGame } from "./components/game.js";
 import { getGames } from "./gamesApiFunctions.js";
 //PAGINACION
-let pagina = 1;
+let pagina = 0;
 let games = [];
+let urlNext = "";
 
 iniciarPaginacion();
+getGames()
+  .then((data) => {
+    games = data.results;
+    urlNext = data.data.next;
+    controlPaginacion();
+  })
+  .catch((error) => console.log(error));
 
 function iniciarPaginacion() {
   avanzarEl.disabled = false;
   retrocederEl.disabled = true;
-  pagina = 1;
+  pagina = 0;
 }
-
-getGames(pagina).then((data) => {
-  games = data.results;
-  renderGames();
-});
 
 avanzarEl.addEventListener("click", (ev) => {
   ev.preventDefault();
@@ -30,28 +33,38 @@ retrocederEl.addEventListener("click", (ev) => {
 });
 
 function obtenerJuegos() {
-  getGames(pagina).then((data) => {
-    games = data.results;
-    renderGames();
-  });
+  getGames(urlNext)
+    .then((data) => {
+      for (let i = 0; i < data.results.length; i++) {
+        games.push(data.results[i]);
+      }
+      urlNext = data.data.next;
+      controlPaginacion();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 function controlPaginacion() {
-  let juegosAMostrar = games.slice(pagina * 10, pagina * 10 + 10);
+  if (pagina != 0 && pagina % 2 == 0) {
+    obtenerJuegos(urlNext);
+  }
+  let juegosAMostrar = games.slice(pagina * 20, pagina * 20 + 20);
+  console.log(pagina);
   if (
     juegosAMostrar.length == 20 &&
-    games.slice((pagina + 1) * 10, (pagina + 1) * 10 + 10) != 0
+    games.slice((pagina + 1) * 20, (pagina + 1) * 20 + 20) != 0
   ) {
     avanzarEl.disabled = false;
-  } else {
-    obtenerJuegos();
   }
-  pagina > 1 ? (retrocederEl.disabled = false) : (retrocederEl.disabled = true);
+  pagina > 0 ? (retrocederEl.disabled = false) : (retrocederEl.disabled = true);
+  renderGames(juegosAMostrar);
 }
 
-function renderGames() {
+function renderGames(juegosAMostrar) {
   gamesEl.innerHTML = "";
-  games.forEach((game) => {
+  juegosAMostrar.forEach((game) => {
     gamesEl.appendChild(createGame(game));
   });
 }
