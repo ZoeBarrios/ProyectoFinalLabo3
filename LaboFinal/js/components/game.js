@@ -38,15 +38,13 @@ export function addGameTrailer(juegoId) {
     const backgroundEl = document.querySelector(".background-img-game");
 
     backgroundEl.addEventListener("mouseover", () =>
-      agregarTrailer(data, backgroundEl)
+      crearTrailer(data, backgroundEl)
     );
-    backgroundEl.removeEventListener("mouseover", () =>
-      agregarTrailer(data, backgroundEl)
-    );
+
     mostrandoVideo = false;
   });
 }
-function agregarTrailer(data, backgroundEl) {
+function crearTrailer(data, backgroundEl) {
   const URLtrailer = data.results[0].data.max;
   const trailerEl = document.querySelector(".trailer-container");
   backgroundEl.style.display = "none";
