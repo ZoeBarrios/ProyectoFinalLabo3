@@ -22,3 +22,15 @@ export async function getGameTrailers(id) {
     .then((response) => response.json())
     .catch((error) => console.log(error));
 }
+
+export async function getGameScreenshots(id) {
+  return await fetch(`${URL}games/${id}/screenshots?key=${KEY}`)
+    .then((response) => response.json())
+    .catch((error) => console.log(error));
+}
+
+export async function getGameStores(id) {
+  return await fetch(`${URL}games/${id}/stores?key=${KEY}`)
+    .then((response) => response.json())
+    .catch((error) => console.log(error));
+}
