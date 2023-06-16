@@ -16,3 +16,9 @@ export async function getGame(id) {
     .then((response) => response.json())
     .catch((error) => console.log(error));
 }
+
+export async function getGameTrailers(id) {
+  return await fetch(`${URL}games/${id}/movies?key=${KEY}`)
+    .then((response) => response.json())
+    .catch((error) => console.log(error));
+}
