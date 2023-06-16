@@ -11,4 +11,8 @@ export async function getGames(
   return { results, data };
 }
 
-function getGame(id) {}
+export async function getGame(id) {
+  return await fetch(`${URL}games/${id}?key=${KEY}`)
+    .then((response) => response.json())
+    .catch((error) => console.log(error));
+}

@@ -1,9 +1,9 @@
-import { createGame } from "./components/game.js";
+import { createGameCard } from "./components/gameCard.js";
 import { getGames } from "./gamesApiFunctions.js";
 //PAGINACION
 let pagina = 0;
-let games = [];
 let urlNext = "";
+let obteniendoJuegos = false;
 
 iniciarPaginacion();
 getGames()
@@ -33,6 +33,8 @@ retrocederEl.addEventListener("click", (ev) => {
 });
 
 function obtenerJuegos() {
+  if (obteniendoJuegos) return;
+  obteniendoJuegos = true;
   getGames(urlNext)
     .then((data) => {
       for (let i = 0; i < data.results.length; i++) {
@@ -40,9 +42,11 @@ function obtenerJuegos() {
       }
       urlNext = data.data.next;
       controlPaginacion();
+      obteniendoJuegos = false;
     })
     .catch((error) => {
       console.log(error);
+      obteniendoJuegos = false;
     });
 }
 
@@ -65,6 +69,6 @@ function controlPaginacion() {
 function renderGames(juegosAMostrar) {
   gamesEl.innerHTML = "";
   juegosAMostrar.forEach((game) => {
-    gamesEl.appendChild(createGame(game));
+    gamesEl.appendChild(createGameCard(game));
   });
 }
