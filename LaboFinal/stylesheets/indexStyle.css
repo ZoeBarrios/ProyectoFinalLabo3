@@ -12,6 +12,113 @@
 }
 
 
+.menu_click{
+  display: none;
+}
+
+.rojo{
+  background-color: black;
+}
+
+
+
+/*ESTILOS PARA EL HEADER*/
+.menu_oculto{
+  background-color: #1B2838;
+  position: absolute;
+  width: 100%;
+  height: 350px;
+  top: 70px;
+  display: none;
+}
+
+.ocultar{
+  display: hide;
+}
+
+.contenedor_menu{
+ /* background-color: brown;*/
+  margin: auto;
+  width: 90%;
+}
+
+
+.nav2 ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.nav2 ul li{
+  margin: 20px 0;
+}
+
+
+.nav2 ul li a{
+  text-decoration: none;
+  color: gold;
+  font-weight: bold;
+  font-size: 25px;
+
+}
+
+.div_input2{
+  /*background-color: red;*/
+  position: relative;
+}
+
+
+.div_input2 input{
+  width: 100%;
+  padding: 10px 50px;
+  border-radius: 2em;
+}
+
+.lupa2{
+  position: absolute;
+    top: 10px;
+    left: 12px;
+    color: #868686ed;
+}
+
+.div_input{
+  /*background-color: red;*/
+  position: relative;
+}
+.lupa{
+  position: absolute;
+    top: 16px;
+    left: 12px;
+    color: #868686ed;
+}
+
+input::placeholder{
+  font-size: 20px;
+  
+ 
+}
+
+.div_input input{
+padding: 15px 35px;
+border-radius: 2em;
+background-color: #edededed ;
+border-color: #edededed;
+border-style: solid;
+}
+/*ESTILOS PARA EL HEADER*/
+
+
+
+
+
+
+
+
+
+
+
+
 body{
   margin: 0;
   padding: 0;
@@ -21,12 +128,30 @@ body{
 }
 
 
+
+
+
+/*ESTILOS PARA CARDS Y JUEGOS*/
+
+
+
+
+
 #card{
   background-color: #00000087;
   color: white;
   padding: 10px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
+
+.game-info{
+
+  flex-grow: 2;
+}
+
+
 
 #card a{
   color: gold;
@@ -54,12 +179,13 @@ object-fit: cover;
 
 header{
   background-color: #1B2838;
+  position: relative;
 }
 
 .cont_header{
  /* background-color: brown;*/
   margin: auto;
-  width: 90%;
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -83,6 +209,26 @@ color: gold;
 font-weight: bold;
 font-size: 20px;
 }
+/*ESTILOS PARA CARDS Y JUEGOS*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -93,14 +239,137 @@ font-size: 20px;
   .games{
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+.cont_header{
+  width: 90%;
 }
 
 
-@media (max-width: 846px){
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 880px){
   .games{
     grid-template-columns: 1fr 1fr;
   }
+.cont_header nav{
+  display: none;
 }
+
+.div_input{
+  display: none;
+}
+
+.menu_click{
+  font-size: 30px;
+  display: initial;
+
+}
+
+.menu_click:hover{
+  cursor: pointer;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -113,9 +382,10 @@ nav{
 }
 
 
-.cont_header{
-  justify-content: center;
+.nav2{
+  display: initial;
 }
+
 
 
 }

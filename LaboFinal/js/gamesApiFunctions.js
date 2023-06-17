@@ -34,3 +34,11 @@ export async function getGameStores(id) {
     .then((response) => response.json())
     .catch((error) => console.log(error));
 }
+
+
+
+
+
+
+
+
