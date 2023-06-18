@@ -78,6 +78,48 @@ function renderGames(juegosAMostrar) {
   juegosAMostrar.forEach((game) => {
     gamesEl.appendChild(createGameCard(game));
   });
+
+
+
+
+
+
+  
+
+   /*FUNCIONALIDAD EN JUEGOS AL AZAR EN DIV DE FONDO*/
+  function juego_al_azar() {
+
+let juego = games[Math.floor(Math.random() *games.length  )]
+let fondoDiv = document.querySelector(".fondo1");
+let tituloH1 = document.querySelector(".tituloJuego");
+let fecha = document.querySelector(".fecha_lanzamiento")
+let h4el = document.createElement('a');
+h4el.classList.add("categoria");
+h4el.textContent = ` ${juego.genres[0].name}`;
+fondoDiv.style.backgroundImage = ` linear-gradient(to right, rgba(20, 30, 48, 0.7), rgba(36,59,85,0.7)), url(${juego.background_image})`
+tituloH1.textContent = juego.name ;
+    fecha.textContent = `Estrenada : ${juego.released}`;
+ tituloH1.appendChild(h4el)
+ let link = document.createElement('a');
+ link.classList.add("link_info")
+ link.href = `http://127.0.0.1:5173/html/game.html?id=${juego.id}`;
+ link.textContent = 'Ver Info';
+let contenedor_fondo1 = document.querySelector(".contenedor_fondo1");
+contenedor_fondo1.appendChild(link);
+    
+  }
+
+
+juego_al_azar();
+
+
+
+
+
+  console.log(games)
+
+
+
 }
 
 

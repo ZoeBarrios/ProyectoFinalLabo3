@@ -12,14 +12,10 @@ export function createGameCard(game) {
       </div>
       </div>
     `;
-    const imagenes = game.background_image;
-    const imagenaleatoria = imagenes[Math.floor(Math.random() * imagenes.length)];
+  
 
 
-const divimagen = document.querySelector("#div-imagen");
-divimagen.style.backgroundImage = `url(${imagenaleatoria})`
-
-
+  
 
 
 
