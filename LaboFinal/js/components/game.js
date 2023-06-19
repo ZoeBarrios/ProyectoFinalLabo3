@@ -19,17 +19,8 @@ export function createGameInfo(game) {
 
         </div>
     `;
-  gameInfo.appendChild(createGameRatings(game.ratings));
 
   return gameInfo;
-}
-
-function createGameRatings(ratings) {
-  const listaEl = document.createElement("ul");
-  ratings.forEach((rating) => {
-    listaEl.innerHTML += `<li>${rating.title} Porcentaje${rating.percent}</li>`;
-  });
-  return listaEl;
 }
 
 export function addGameTrailer(juegoId) {

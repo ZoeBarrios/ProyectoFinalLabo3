@@ -1,4 +1,4 @@
-import { createGameCard } from "./components/gameCard.js";
+import { createGameCard, hoverCard } from "./components/gameCard.js";
 import { getGames } from "./gamesApiFunctions.js";
 
 //PAGINACION
@@ -76,7 +76,19 @@ function controlPaginacion() {
 export function renderGames(juegosAMostrar) {
   gamesEl.innerHTML = "";
   juegosAMostrar.forEach((game) => {
-    gamesEl.appendChild(createGameCard(game));
+    const juego = createGameCard(game);
+    gamesEl.appendChild(juego);
+  });
+  const cards = document.querySelectorAll("#card");
+  cards.forEach((card) => {
+    card.addEventListener("mouseover", (ev) => {
+      hoverCard(card);
+    });
+    card.addEventListener("mouseleave", (ev) => {
+      card.innerHTML = createGameCard(
+        games.find((game) => game.name == card.classList)
+      ).innerHTML;
+    });
   });
 }
 
