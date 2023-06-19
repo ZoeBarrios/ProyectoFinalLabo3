@@ -25,6 +25,7 @@ function iniciarPaginacion() {
 avanzarEl.addEventListener("click", (ev) => {
   ev.preventDefault();
   pagina++;
+  window.scrollTo(0, gamesEl.offsetTop - 100);
   controlPaginacion();
 });
 
