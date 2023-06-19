@@ -21,6 +21,69 @@
 }
 
 
+/*ESTILOS PARA EL PRIMER HEADER CON JUEGO AL AZAR*/
+.categoria{
+  font-weight: bold;
+  color:#2A475E;
+  font-size: 15px;
+  background-color: gold;
+  padding: 5px 10px;
+  border-radius: 2em;
+  margin: 0 10px;
+}
+
+.link_info{
+  transition: all 0.90s;
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 2em;
+  padding: 5px 40px;
+  background-color: #007aff;
+}
+
+.link_info:hover{
+  transition: all 0.90s;
+  background-color: #080f28;
+}
+
+
+
+
+.fondo1{
+ 
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-position: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+.contenedor_fondo1{
+ /* background-color: brown;*/
+  margin: auto;
+  width: 70%;
+}
+
+
+.tituloJuego{
+  font-size: 60px;
+}
+.contenedor_fondo1 h2{
+  font-size: 30px;
+  color: gold;
+}
+
+
+
+
+
+
+
+
+
+
 
 /*ESTILOS PARA EL HEADER*/
 .menu_oculto{
@@ -124,6 +187,7 @@ body{
   padding: 0;
   font-family: 'Roboto', sans-serif;
   background-color: #2A475E;
+  
   color: white;
 }
 
@@ -317,6 +381,16 @@ font-size: 20px;
 .menu_click:hover{
   cursor: pointer;
 }
+.fondo1{
+  background-position: center;
+}
+
+
+.categoria{
+  font-size: 9px;
+}
+
+
 }
 
 
