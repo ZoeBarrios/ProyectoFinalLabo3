@@ -6,17 +6,20 @@ let pagina = 0;
 let urlNext = "";
 let obteniendoJuegos = false;
 
-iniciarPaginacion();
-getGames()
-  .then((data) => {
-    games = data.results;
-    urlNext = data.data.next;
-    juego_al_azar();
-    controlPaginacion();
-  })
-  .catch((error) => console.log(error));
+cargarJuegos();
+export function cargarJuegos(next = undefined) {
+  iniciarPaginacion();
+  getGames(next)
+    .then((data) => {
+      games = data.results;
+      urlNext = data.data.next;
+      juego_al_azar();
+      controlPaginacion();
+    })
+    .catch((error) => console.log(error));
+}
 
-function iniciarPaginacion() {
+export function iniciarPaginacion() {
   avanzarEl.disabled = false;
   retrocederEl.disabled = true;
   pagina = 0;
@@ -32,6 +35,7 @@ avanzarEl.addEventListener("click", (ev) => {
 retrocederEl.addEventListener("click", (ev) => {
   ev.preventDefault();
   pagina--;
+  window.scrollTo(0, gamesEl.offsetTop - 100);
   controlPaginacion();
 });
 
@@ -69,7 +73,7 @@ function controlPaginacion() {
   renderGames(juegosAMostrar);
 }
 
-function renderGames(juegosAMostrar) {
+export function renderGames(juegosAMostrar) {
   gamesEl.innerHTML = "";
   juegosAMostrar.forEach((game) => {
     gamesEl.appendChild(createGameCard(game));
@@ -79,9 +83,6 @@ function renderGames(juegosAMostrar) {
 /*FUNCIONALIDAD EN JUEGOS AL AZAR EN DIV DE FONDO*/
 export function juego_al_azar() {
   let juego = games[Math.floor(Math.random() * games.length)];
-  let fondoDiv = document.querySelector(".fondo1");
-  let tituloH1 = document.querySelector(".tituloJuego");
-  let fecha = document.querySelector(".fecha_lanzamiento");
   let h4el = document.createElement("a");
   h4el.classList.add("categoria");
   h4el.textContent = ` ${juego.genres[0].name}`;
@@ -89,10 +90,7 @@ export function juego_al_azar() {
   tituloH1.textContent = juego.name;
   fecha.textContent = `Estrenada : ${juego.released}`;
   tituloH1.appendChild(h4el);
-  let link = document.createElement("a");
-  link.classList.add("link_info");
   link.href = `../html/game.html?id=${juego.id}`;
-  link.textContent = "Ver Info";
-  let contenedor_fondo1 = document.querySelector(".contenedor_fondo1");
+
   contenedor_fondo1.appendChild(link);
 }
