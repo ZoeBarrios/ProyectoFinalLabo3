@@ -10,3 +10,13 @@ botonesFiltroEl.forEach((boton) => {
     cargarJuegos(url);
   });
 });
+
+buscadorEl.forEach((buscador) => {
+  buscador.addEventListener("keyup", (ev) => {
+    if (ev.key === "Enter") {
+      const url = `${URL}games?page_size=40&page=1&search=${ev.target.value}&key=${KEY}`;
+      cargarJuegos(url);
+      tituloSeccionEl.innerText = `Titulos relacionados a ${ev.target.value}`;
+    }
+  });
+});
