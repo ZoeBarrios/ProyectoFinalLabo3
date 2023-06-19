@@ -5,6 +5,7 @@ const gameInfoEl = document.querySelector(".game-info");
 const botonesFiltroEl = document.querySelectorAll(".filtro");
 const buscadorEl = document.querySelectorAll("#buscador");
 const tituloSeccionEl = document.querySelector(".tituloSeccion");
+const tituloLogo = document.querySelector(".tituloLogo");
 const fondoDiv = document.querySelector(".fondo1");
 const tituloH1 = document.querySelector(".tituloJuego");
 const fecha = document.querySelector(".fecha_lanzamiento");

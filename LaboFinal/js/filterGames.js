@@ -20,3 +20,9 @@ buscadorEl.forEach((buscador) => {
     }
   });
 });
+
+tituloLogo.addEventListener("click", (ev) => {
+  ev.preventDefault();
+  cargarJuegos();
+  tituloSeccionEl.innerText = "Juegos";
+});
