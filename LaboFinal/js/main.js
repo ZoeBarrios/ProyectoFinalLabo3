@@ -1,12 +1,6 @@
 import { createGameCard } from "./components/gameCard.js";
 import { getGames } from "./gamesApiFunctions.js";
 
-
-
-
-
-
-
 //PAGINACION
 let pagina = 0;
 let urlNext = "";
@@ -79,8 +73,3 @@ function renderGames(juegosAMostrar) {
     gamesEl.appendChild(createGameCard(game));
   });
 }
-
-
-
-
-
