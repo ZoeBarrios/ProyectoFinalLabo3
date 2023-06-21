@@ -10,11 +10,13 @@ export function createGameInfo(game) {
 
         <h1>${game.name}</h1>
         <div class="game-info__image">
-        <img src="${game.background_image}" alt="${game.name}" class="background-img-game" />
+        <img src="${game.background_image}" alt="${
+    game.name
+  }" class="background-img-game" />
         </div>
         <div class="game-info__text">
         <h2>${game.name}</h2>
-        <p>${game.description_raw}</p>
+        <p>${game.description.split("Español")[0]}</p>
         </div>
 
         </div>
