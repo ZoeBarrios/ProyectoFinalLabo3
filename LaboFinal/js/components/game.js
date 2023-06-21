@@ -8,7 +8,6 @@ export function createGameInfo(game) {
 <div id="card">
 
 
-        <h1>${game.name}</h1>
         <div class="game-info__image">
         <img src="${game.background_image}" alt="${game.name}" class="background-img-game" />
         </div>
@@ -54,7 +53,7 @@ export function addScreenshots(juegoId) {
     const screenshotsEl = document.querySelector(".screenshots-container");
     screenshots.results.forEach((screenshot, i) => {
       if (i > 5) return;
-      screenshotsEl.innerHTML += `<img src="${screenshot.image}" alt="${screenshot.id}" />`;
+      screenshotsEl.innerHTML += `<li class="slide-visible"><img src="${screenshot.image}" alt="${screenshot.id}"></li>`;
     });
   });
 }
