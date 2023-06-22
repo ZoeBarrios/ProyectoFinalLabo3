@@ -99,7 +99,55 @@ border-style: solid;
 
 
 .contenedorLista{
+
+ /* height: 280px;*/
+ background-color:#080f2896;
+ position: absolute;
+ width: 100%;
+ top: 0;
+ height: 280px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+
+
+.contenedorLista ul{
+  background-color: #080f2896;
   height: 280px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  gap: 40px;
+  text-align: center;
+  padding: 10px;
+}
+.contenedorLista ul li{
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+}
+
+.estrella{
+  color: gold;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+
+
+
+
+
+.div{
+  position: relative;
 }
 
 .white{
@@ -391,7 +439,7 @@ header {
 
 
 
-.contenedorLista {
+.contenedorLista ul {
 }
 
 /*ESTILOS PARA CARDS Y JUEGOS*/
@@ -403,6 +451,12 @@ header {
 
   .cont_header {
     width: 90%;
+  }
+
+
+  .contenedorLista ul{
+    gap: 15px;
+    align-items: center;
   }
 }
 

@@ -101,7 +101,7 @@ export function renderGames(juegosAMostrar) {
     card.addEventListener("mouseover", (ev) => {
       const imagen = card.querySelector(".game-img");
       const contenedorLista = card.querySelector(".contenedorLista");
-      imagen.style.display = "none";
+      imagen.style.display = "block";
       contenedorLista.style.display = "block";
     });
     card.addEventListener("mouseleave", (ev) => {
