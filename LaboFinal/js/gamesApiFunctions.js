@@ -29,8 +29,14 @@ export async function getGameScreenshots(id) {
     .catch((error) => console.log(error));
 }
 
-export async function getGameStores(id) {
+export async function getGameStores(id, name) {
   return await fetch(`${URL}games/${id}/stores?key=${KEY}`)
+    .then((response) => response.json())
+    .catch((error) => console.log(error));
+}
+
+export async function getStoreInfo(id) {
+  return await fetch(`${URL}stores/${id}?key=${KEY}`)
     .then((response) => response.json())
     .catch((error) => console.log(error));
 }

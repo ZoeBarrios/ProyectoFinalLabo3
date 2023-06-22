@@ -3,6 +3,7 @@ import {
   createGameInfo,
   addGameTrailer,
   addScreenshots,
+  addStores,
 } from "./components/game.js";
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -11,9 +12,12 @@ const juegoId = urlParams.get("id");
 getGame(juegoId)
   .then((data) => {
     gameInfoEl.appendChild(createGameInfo(data));
+    addStores(juegoId);
   })
-  .then(() => addGameTrailer(juegoId))
-  .then(() => addScreenshots(juegoId))
+  .then((data) => {
+    addGameTrailer(juegoId);
+    addScreenshots(juegoId);
+  })
   .then(() => {
     const favoritos = document.querySelector(".favoritos");
     favoritos.addEventListener("click", (e) => {

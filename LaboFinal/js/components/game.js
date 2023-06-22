@@ -2,6 +2,7 @@ import {
   getGameTrailers,
   getGameScreenshots,
   getGameStores,
+  getStoreInfo,
 } from "../gamesApiFunctions.js";
 let mostrandoVideo = false;
 
@@ -69,12 +70,12 @@ export function addScreenshots(juegoId) {
 }
 
 export function addStores(id) {
-  const divStores = document.createElement("div");
-  divStores.classList.add("stores-container");
+  const storesEl = document.querySelector(".stores-container");
+
   getGameStores(id).then((stores) => {
-    stores.results.forEach((store) => {
-      divStores.innerHTML += `<a href="${store.url}" target="_blank"><img src="${store.store.image_background}" alt="${store.store.name}" /></a>`;
+    stores.results.forEach(async (store) => {
+      const storeInfo = await getStoreInfo(store.store_id);
+      storesEl.innerHTML += `<a href="${store.url}" target="_blank" class="stores">${storeInfo.name}</a>`;
     });
-    divStores;
   });
 }
