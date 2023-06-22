@@ -11,5 +11,6 @@ const tituloH1 = document.querySelector(".tituloJuego");
 const fecha = document.querySelector(".fecha_lanzamiento");
 const link = document.querySelector(".link_info");
 const contenedor_fondo1 = document.querySelector(".contenedor_fondo1");
+const anchorIniciarSesionEl = document.querySelectorAll(".anchorIniciarSesion");
 
 let games = [];

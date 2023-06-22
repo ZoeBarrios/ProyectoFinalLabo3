@@ -1,5 +1,17 @@
-import { createGameCard, hoverCard } from "./components/gameCard.js";
+import { createGameCard } from "./components/gameCard.js";
 import { getGames } from "./gamesApiFunctions.js";
+
+if (localStorage.getItem("logeado") != null) {
+  anchorIniciarSesionEl.forEach((anchor) => {
+    anchor.textContent = "Mi perfil";
+    anchor.href = "../html/profile.html";
+  });
+} else {
+  anchorIniciarSesionEl.forEach((anchor) => {
+    anchor.textContent = "Iniciar sesión";
+    anchor.href = "../html/loginRegister.html";
+  });
+}
 
 //PAGINACION
 let pagina = 0;
@@ -82,12 +94,16 @@ export function renderGames(juegosAMostrar) {
   const cards = document.querySelectorAll("#card");
   cards.forEach((card) => {
     card.addEventListener("mouseover", (ev) => {
-      hoverCard(card);
+      const imagen = card.querySelector(".game-img");
+      const contenedorLista = card.querySelector(".contenedorLista");
+      imagen.style.display = "none";
+      contenedorLista.style.display = "block";
     });
     card.addEventListener("mouseleave", (ev) => {
-      card.innerHTML = createGameCard(
-        games.find((game) => game.name == card.classList)
-      ).innerHTML;
+      const imagen = card.querySelector(".game-img");
+      const contenedorLista = card.querySelector(".contenedorLista");
+      imagen.style.display = "block";
+      contenedorLista.style.display = "none";
     });
   });
 }
