@@ -7,24 +7,22 @@
   transition: 0.5s;
 }*/
 
-*{
+* {
   box-sizing: border-box;
 }
 
-
-.menu_click{
+.menu_click {
   display: none;
 }
 
-.rojo{
+.rojo {
   background-color: black;
 }
 
-
 /*ESTILOS PARA EL PRIMER HEADER CON JUEGO AL AZAR*/
-.categoria{
+.categoria {
   font-weight: bold;
-  color:#2A475E;
+  color: #2a475e;
   font-size: 15px;
   background-color: gold;
   padding: 5px 10px;
@@ -32,8 +30,8 @@
   margin: 0 10px;
 }
 
-.link_info{
-  transition: all 0.90s;
+.link_info {
+  transition: all 0.9s;
   text-decoration: none;
   color: white;
   font-size: 25px;
@@ -43,51 +41,35 @@
   background-color: #007aff;
 }
 
-.link_info:hover{
-  transition: all 0.90s;
+.link_info:hover {
+  transition: all 0.9s;
   background-color: #080f28;
 }
 
-
-
-
-.fondo1{
- 
+.fondo1 {
   padding-top: 200px;
   padding-bottom: 200px;
   background-position: inherit;
   background-size: cover;
   background-repeat: no-repeat;
-  
 }
-.contenedor_fondo1{
- /* background-color: brown;*/
+.contenedor_fondo1 {
+  /* background-color: brown;*/
   margin: auto;
   width: 70%;
 }
 
-
-.tituloJuego{
+.tituloJuego {
   font-size: 60px;
 }
-.contenedor_fondo1 h2{
+.contenedor_fondo1 h2 {
   font-size: 30px;
   color: gold;
 }
 
-
-
-
-
-
-
-
-
-
-
 /*ESTILOS PARA EL HEADER*/
-.menu_oculto{
-  background-color: #1B2838;
+.menu_oculto {
+  background-color: #1b2838;
   position: absolute;
   width: 100%;
   height: 350px;
@@ -95,113 +77,87 @@
   display: none;
 }
 
-.ocultar{
+.ocultar {
   display: hide;
 }
 
-.contenedor_menu{
- /* background-color: brown;*/
+.contenedor_menu {
+  /* background-color: brown;*/
   margin: auto;
   width: 90%;
 }
 
-
-.nav2 ul{
+.nav2 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-
-.nav2 ul li{
+.nav2 ul li {
   margin: 20px 0;
 }
 
-
-.nav2 ul li a{
+.nav2 ul li a {
   text-decoration: none;
   color: gold;
   font-weight: bold;
   font-size: 25px;
-
 }
 
-.div_input2{
+.div_input2 {
   /*background-color: red;*/
   position: relative;
 }
 
-
-.div_input2 input{
+.div_input2 input {
   width: 100%;
   padding: 10px 50px;
   border-radius: 2em;
 }
 
-.lupa2{
+.lupa2 {
   position: absolute;
-    top: 10px;
-    left: 12px;
-    color: #868686ed;
+  top: 10px;
+  left: 12px;
+  color: #868686ed;
 }
 
-.div_input{
+.div_input {
   /*background-color: red;*/
   position: relative;
 }
-.lupa{
+.lupa {
   position: absolute;
-    top: 16px;
-    left: 12px;
-    color: #868686ed;
+  top: 16px;
+  left: 12px;
+  color: #868686ed;
 }
 
-input::placeholder{
+input::placeholder {
   font-size: 20px;
-  
- 
 }
 
-.div_input input{
-padding: 15px 35px;
-border-radius: 2em;
-background-color: #edededed ;
-border-color: #edededed;
-border-style: solid;
+.div_input input {
+  padding: 15px 35px;
+  border-radius: 2em;
+  background-color: #edededed;
+  border-color: #edededed;
+  border-style: solid;
 }
 /*ESTILOS PARA EL HEADER*/
 
-
-
-
-
-
-
-
-
-
-
-
-body{
+body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #2A475E;
-  
+  font-family: "Roboto", sans-serif;
+  background-color: #2a475e;
+
   color: white;
 }
 
-
-
-
-
 /*ESTILOS PARA CARDS Y JUEGOS*/
 
-
-
-
-
-#card{
+#card {
   background-color: #00000087;
   color: white;
   padding: 10px;
@@ -210,44 +166,38 @@ body{
   flex-direction: column;
 }
 
-.game-info{
-
+.game-info {
   flex-grow: 2;
 }
 
-
-
-#card a{
+#card a {
   color: gold;
   font-weight: bold;
   text-decoration: none;
 }
 
-
-.games{
+.games {
   margin: auto;
   width: 80%;
- /* background-color: brown;*/
+  /* background-color: brown;*/
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-gap: 20px;
+  gap: 20px;
 }
 
-
-
-#card img{
+#card img {
   width: 100%;
   height: 280px;
-object-fit: cover;
+  object-fit: cover;
 }
 
-header{
-  background-color: #1B2838;
+header {
+  background-color: #1b2838;
   position: relative;
 }
 
-.cont_header{
- /* background-color: brown;*/
+.cont_header {
+  /* background-color: brown;*/
   margin: auto;
   width: 70%;
   display: flex;
@@ -255,211 +205,78 @@ header{
   justify-content: space-between;
 }
 
-.cont_header h1{
+.cont_header h1 {
   font-size: 35px;
 }
 
-.cont_header nav ul{
+.cont_header nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
 }
 
-.cont_header nav ul li a{
-margin: 0 10px;
-text-decoration: none;
-color: gold;
-font-weight: bold;
-font-size: 20px;
+.cont_header nav ul li a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: gold;
+  font-weight: bold;
+  font-size: 20px;
 }
+
+.contenedorLista {
+}
+
 /*ESTILOS PARA CARDS Y JUEGOS*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 1125px){
-  .games{
+@media (max-width: 1125px) {
+  .games {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-.cont_header{
-  width: 90%;
+  .cont_header {
+    width: 90%;
+  }
 }
 
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 880px){
-  .games{
+@media (max-width: 880px) {
+  .games {
     grid-template-columns: 1fr 1fr;
   }
-.cont_header nav{
-  display: none;
+  .cont_header nav {
+    display: none;
+  }
+
+  .div_input {
+    display: none;
+  }
+
+  .menu_click {
+    font-size: 30px;
+    display: initial;
+  }
+
+  .menu_click:hover {
+    cursor: pointer;
+  }
+  .fondo1 {
+    background-position: center;
+  }
+
+  .categoria {
+    font-size: 9px;
+  }
 }
 
-.div_input{
-  display: none;
-}
-
-.menu_click{
-  font-size: 30px;
-  display: initial;
-
-}
-
-.menu_click:hover{
-  cursor: pointer;
-}
-.fondo1{
-  background-position: center;
-}
-
-
-.categoria{
-  font-size: 9px;
-}
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 575px){
-  .games{
+@media (max-width: 575px) {
+  .games {
     grid-template-columns: 1fr;
   }
-nav{
-  display: none;
-}
+  nav {
+    display: none;
+  }
 
-
-.nav2{
-  display: initial;
-}
-
-
-
+  .nav2 {
+    display: initial;
+  }
 }
