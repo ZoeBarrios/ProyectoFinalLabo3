@@ -23,8 +23,8 @@ export function createGameCard(game) {
       <div class="game-info">
         <a href="../html/game.html?id=${game.id}">Ver más</a>
         <h3>${game.name}</h3>
-        <span>${game.released}</span>
-        <span>RATING ${game.rating}</span>
+        <span>${game.released || ""}</span>
+        <span>RATING ${game.rating || ""}</span>
       </div>
     </div>
   `;

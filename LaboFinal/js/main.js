@@ -1,6 +1,18 @@
 import { createGameCard } from "./components/gameCard.js";
 import { getGames } from "./gamesApiFunctions.js";
 
+if (localStorage.getItem("logeado") != null) {
+  anchorIniciarSesionEl.forEach((anchor) => {
+    anchor.textContent = "Mi perfil";
+    anchor.href = "../html/profile.html";
+  });
+} else {
+  anchorIniciarSesionEl.forEach((anchor) => {
+    anchor.textContent = "Iniciar sesión";
+    anchor.href = "../html/loginRegister.html";
+  });
+}
+
 //PAGINACION
 let pagina = 0;
 let urlNext = "";
