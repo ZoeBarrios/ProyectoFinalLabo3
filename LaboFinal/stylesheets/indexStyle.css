@@ -24,16 +24,53 @@
   padding-bottom: 80px;
 }
 
+
+
 .cont_botones{
-  background-color: red;
+  /*background-color: red;*/
   display: flex;
   justify-content: center;
-  margin: auto;
+  margin: 40px auto;
   width: 80%;
+  gap: 20px;
+}
+
+.avanzar, .retroceder{
+  transition: all 0.90s;
+  border-radius: 10em;
+  /*padding: 5px  10px;*/
+padding: 2px 50px;  
+color: white;
+background-color: #080f28;
+border-color: white;
+border-style: solid;
 }
 
 
+.avanzar:hover{
+  background-color: #007aff;
+}
 
+.retroceder:hover{
+  transition: all 0.90s;
+  background-color: #007aff;
+}
+
+.retroceder span{
+  font-size: 60px;
+}
+
+.avanzar span{
+  font-size: 60px;
+}
+
+.gris{
+  background-color: grey;
+}
+
+.gris:hover{
+  background-color: gray;
+}
 
 
 .cont_explicacion{
@@ -369,6 +406,25 @@ header {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 880px) {
   .games {
     grid-template-columns: 1fr 1fr;
@@ -396,7 +452,45 @@ header {
   .categoria {
     font-size: 9px;
   }
+
+.contenedor_fondo1{
+  width: 90%;
+  text-align: center;
 }
+
+.categoria{
+  padding: 5px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 575px) {
   .games {
@@ -409,6 +503,16 @@ header {
   .nav2 {
     display: initial;
   }
+
+  .avanzar, .retroceder{
+    padding: 0px 30px;
+  }
+
+  .cont_botones{
+    gap: 10px;
+  }
+
+
 }
 
 
