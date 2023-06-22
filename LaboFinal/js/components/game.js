@@ -1,4 +1,8 @@
-import { getGameTrailers, getGameScreenshots } from "../gamesApiFunctions.js";
+import {
+  getGameTrailers,
+  getGameScreenshots,
+  getGameStores,
+} from "../gamesApiFunctions.js";
 let mostrandoVideo = false;
 
 export function createGameInfo(game) {
@@ -59,5 +63,16 @@ export function addScreenshots(juegoId) {
       if (i > 5) return;
       screenshotsEl.innerHTML += `<img src="${screenshot.image}" alt="${screenshot.id}" />`;
     });
+  });
+}
+
+export function addStores(id) {
+  const divStores = document.createElement("div");
+  divStores.classList.add("stores-container");
+  getGameStores(id).then((stores) => {
+    stores.results.forEach((store) => {
+      divStores.innerHTML += `<a href="${store.url}" target="_blank"><img src="${store.store.image_background}" alt="${store.store.name}" /></a>`;
+    });
+    divStores;
   });
 }
