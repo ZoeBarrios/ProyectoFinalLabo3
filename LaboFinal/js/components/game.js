@@ -5,6 +5,7 @@ export function createGameInfo(game) {
   const gameInfo = document.createElement("div");
   gameInfo.classList.add("game-info__container");
   gameInfo.innerHTML = `
+
   <div id="card">
   <button><a href="../index.html">Volver</a></button>
   <button class="favoritos">Agregar a favoritos</button>
@@ -20,6 +21,7 @@ export function createGameInfo(game) {
           </div>
 
           </div>
+
     `;
 
   return gameInfo;
@@ -57,7 +59,7 @@ export function addScreenshots(juegoId) {
     const screenshotsEl = document.querySelector(".screenshots-container");
     screenshots.results.forEach((screenshot, i) => {
       if (i > 5) return;
-      screenshotsEl.innerHTML += `<img src="${screenshot.image}" alt="${screenshot.id}" />`;
+      screenshotsEl.innerHTML += `<li class="slide-visible"><img src="${screenshot.image}" alt="${screenshot.id}"></li>`;
     });
   });
 }
