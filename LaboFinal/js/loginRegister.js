@@ -1,6 +1,5 @@
 import { getAll, pushDB } from "./vercelVKFuntions";
 
-const urlJsonServer = import.meta.env.VITE_API_URL_JSONSERVER;
 const formLogin = document.querySelector("#login");
 const formRegister = document.querySelector("#register");
 const anchorLogin = document.querySelector(".anchorLogin");
@@ -24,19 +23,26 @@ formLogin.addEventListener("submit", async (e) => {
 
   const email = document.querySelector("#loginEmail").value;
   const password = document.querySelector("#loginPassword").value;
+  const user = document.querySelector("#loginUser").value;
 
   let usuarios = await getAll("users");
 
   let yaExiste = false;
   if (usuarios) {
     yaExiste = usuarios.find(
-      (usuario) => usuario.email === email && usuario.password === password
+      (usuario) =>
+        usuario.email === email &&
+        usuario.password === password &&
+        usuario.user === user
     );
   }
 
   if (yaExiste) {
     console.log(yaExiste);
-    localStorage.setItem("logeado", JSON.stringify(yaExiste.id));
+    localStorage.setItem(
+      "logeado",
+      JSON.stringify({ id: yaExiste.id, user: user })
+    );
     window.location.href = "/index.html";
   } else {
     alert("El usuario no existe");
@@ -48,6 +54,7 @@ formRegister.addEventListener("submit", async (e) => {
 
   const email = document.querySelector("#registerEmail").value;
   const password = document.querySelector("#registerPassword").value;
+  const userInput = document.querySelector("#loginUser").value;
   const passwordConfirmation = document.querySelector(
     "#registerPasswordConfirmation"
   ).value;
@@ -59,7 +66,10 @@ formRegister.addEventListener("submit", async (e) => {
   let yaExiste = false;
   if (usuarios) {
     yaExiste = usuarios.find(
-      (usuario) => usuario.email === email && usuario.password === password
+      (usuario) =>
+        usuario.email === email &&
+        usuario.password === password &&
+        usuario.user === userInput
     );
   }
 
@@ -74,6 +84,7 @@ formRegister.addEventListener("submit", async (e) => {
       id,
       email,
       password,
+      user: userInput,
     };
 
     usuarios.push(user);
