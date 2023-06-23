@@ -4,7 +4,7 @@ export async function getAll(key) {
   let all = [];
   let elements = await fetch(`${URL_VK}/get/${key}`, {
     headers: {
-      Authorization: `Bearer ${import.meta.env.VITE_KV_REST_API_TOKEN}`,
+      Authorization: `Bearer ${TOKEN_VK}`,
     },
   }).then((response) => response.json());
 
