@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/loadFavoriteGames.js" defer type="module"></script>
+    <link rel="stylesheet" href="../stylesheets/indexStyle.css">
+    <title>Perfil</title>
+</head>
+
+<body>
+
+    <h1>Perfil</h1>
+    <button onclick="cerrarSesion()">Cerrar sesion</button>
+    <div class="listaJuegosFavoritos">
+
+    </div>
+</body>
+<script>
+    function cerrarSesion() {
+        localStorage.removeItem("logeado");
+        window.location.href = "../../index.html";
+    }
+</script>
+
+</html>

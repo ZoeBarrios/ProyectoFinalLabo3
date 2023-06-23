@@ -1,8 +1,573 @@
-.game-img {
+/*.game-img {
   width: 50%;
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   transition: 0.5s;
+}*/
+
+/*.filtro{
+  background-color: red;
+}*/
+
+.tituloLogo{
+  display: flex;
 }
+.tituloLogo .mando1{
+  width: 50px;
+  margin-left: 10px;
+}
+
+#fondo_explicacion{
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+
+
+
+.cont_botones{
+  /*background-color: red;*/
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+  width: 80%;
+  gap: 20px;
+}
+
+.avanzar, .retroceder{
+  transition: all 0.90s;
+  border-radius: 10em;
+  /*padding: 5px  10px;*/
+padding: 2px 50px;  
+color: white;
+background-color: #080f28;
+border-color: white;
+border-style: solid;
+}
+
+
+.avanzar:hover{
+  background-color: #007aff;
+}
+
+.retroceder:hover{
+  transition: all 0.90s;
+  background-color: #007aff;
+}
+
+.retroceder span{
+  font-size: 60px;
+}
+
+.avanzar span{
+  font-size: 60px;
+}
+
+.gris{
+  background-color: grey;
+}
+
+.gris:hover{
+  background-color: gray;
+}
+
+
+.cont_explicacion{
+
+  margin: auto;
+  width: 60%;
+  text-align: center;
+}
+
+.cont_explicacion h1{
+ 
+  display: flex;
+ /*s background-color: black;*/
+  justify-content: center;
+}
+.mando2{
+  width: 50px;
+ /* margin-left: 10px;*/
+}
+
+
+.cont_explicacion h3{
+  line-height: 35px;
+}
+
+
+
+.contenedorLista{
+
+ /* height: 280px;*/
+ background-color:#080f2896;
+ position: absolute;
+ width: 100%;
+ top: 0;
+ height: 280px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+
+
+.contenedorLista ul{
+  background-color: #080f2896;
+  height: 280px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  gap: 40px;
+  text-align: center;
+  padding: 10px;
+}
+.contenedorLista ul li{
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+}
+
+.estrella{
+  color: gold;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+
+
+
+
+
+.div{
+  position: relative;
+}
+
+.white{
+  color: white;
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+.menu_click {
+  display: none;
+}
+
+.rojo {
+  background-color: black;
+}
+
+/*ESTILOS PARA EL PRIMER HEADER CON JUEGO AL AZAR*/
+.categoria {
+  font-weight: bold;
+  color: #2a475e;
+  font-size: 15px;
+  background-color: gold;
+  padding: 5px 10px;
+  border-radius: 2em;
+  margin: 0 10px;
+}
+
+.link_info {
+  transition: all 0.9s;
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 2em;
+  padding: 5px 40px;
+  background-color: #007aff;
+}
+
+.link_info:hover {
+  transition: all 0.9s;
+  background-color: #080f28;
+}
+
+.fondo1 {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-position: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.contenedor_fondo1 {
+  /* background-color: brown;*/
+  margin: auto;
+  width: 70%;
+}
+
+.tituloJuego {
+
+  cursor: pointer;
+}
+
+
+.tituloLogo{
+  cursor: pointer;
+}
+
+
+
+
+.contenedor_fondo1 h2 {
+  font-size: 30px;
+  color: gold;
+}
+
+/*ESTILOS PARA EL HEADER*/
+.menu_oculto {
+  background-color: #1b2838;
+  position: absolute;
+  width: 100%;
+  height: 350px;
+  top: 70px;
+  display: none;
+}
+
+.ocultar {
+  display: hide;
+}
+
+.contenedor_menu {
+  /* background-color: brown;*/
+  margin: auto;
+  width: 90%;
+}
+
+.nav2 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav2 ul li {
+  margin: 20px 0;
+}
+
+.nav2 ul li a {
+  text-decoration: none;
+  color: gold;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.div_input2 {
+  /*background-color: red;*/
+  position: relative;
+}
+
+.div_input2 input {
+  width: 100%;
+  padding: 10px 50px;
+  border-radius: 2em;
+}
+
+.lupa2 {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  color: #868686ed;
+}
+
+.div_input {
+  /*background-color: red;*/
+  position: relative;
+}
+.lupa {
+  position: absolute;
+  top: 16px;
+  left: 12px;
+  color: #868686ed;
+}
+
+input::placeholder {
+  font-size: 20px;
+}
+
+.div_input input {
+  padding: 15px 35px;
+  border-radius: 2em;
+  background-color: #edededed;
+  border-color: #edededed;
+  border-style: solid;
+}
+/*ESTILOS PARA EL HEADER*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color:#080f28;
+
+  color: white;
+}
+
+/*ESTILOS PARA CARDS Y JUEGOS*/
+
+#card {
+  background-color: #00000087;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-info {
+  flex-grow: 2;
+  padding: 5px 0;
+}
+
+#card a {
+  color: gold;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.games {
+  margin: auto;
+  width: 80%;
+  /* background-color: brown;*/
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+#card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+header {
+  background-color: #1b2838;
+  position: relative;
+}
+
+.cont_header {
+  /* background-color: brown;*/
+  margin: auto;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cont_header h1 {
+  font-size: 35px;
+}
+
+.cont_header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.cont_header nav ul  a {
+  transition: all 0.90s;
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.estilo_link{
+  transition: all 0.90s;
+  background-color: #007aff;
+  padding: 5px 20px;
+ text-align: center;
+  border-radius: 1em;
+}
+
+
+.filtro:hover{
+  transition: all 0.90s;
+  background-color: #007aff;
+  padding: 5px 20px;
+  border-radius: 1em;
+}
+
+
+
+/*
+.filtro{
+  background-color: #007aff;
+ 
+}*/
+
+
+/*ESTILOS PARA CARDS Y JUEGOS*/
+
+/*  Boton Go Up  */
+.ir-arriba {
+	display: none;
+  font-size: 2.5em;
+	padding: 30px;
+	background: gold;
+	color: #2A475E;
+	cursor: pointer;
+  border-radius: 25px 25px 0 0;
+	position: fixed;
+	bottom: 0;
+	right: 10px;
+  opacity: 0.25;
+}
+
+.ir-arriba:hover{
+  opacity: 1;
+  transition: ease-in-out .5s;
+}
+/*  Boton Go Up  */
+
+
+
+.contenedorLista ul {
+}
+
+/*ESTILOS PARA CARDS Y JUEGOS*/
+
+@media (max-width: 1125px) {
+  .games {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .cont_header {
+    width: 90%;
+  }
+
+
+  .contenedorLista ul{
+    gap: 15px;
+    align-items: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 880px) {
+  .games {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cont_header nav {
+    display: none;
+  }
+
+  .div_input {
+    display: none;
+  }
+
+  .menu_click {
+    font-size: 30px;
+    display: initial;
+  }
+
+  .menu_click:hover {
+    cursor: pointer;
+  }
+  .fondo1 {
+    background-position: center;
+  }
+
+  .categoria {
+    font-size: 9px;
+  }
+
+.contenedor_fondo1{
+  width: 90%;
+  text-align: center;
+}
+
+.categoria{
+  padding: 5px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 575px) {
+  .games {
+    grid-template-columns: 1fr;
+  }
+  nav {
+    display: none;
+  }
+
+  .nav2 {
+    display: initial;
+  }
+
+  .avanzar, .retroceder{
+    padding: 0px 30px;
+  }
+
+  .cont_botones{
+    gap: 10px;
+  }
+
+
+}
+
+
+

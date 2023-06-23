@@ -1,38 +1,63 @@
-import { createGame } from "./components/game.js";
+import { createGameCard } from "./components/gameCard.js";
 import { getGames } from "./gamesApiFunctions.js";
+
+if (localStorage.getItem("logeado") != null) {
+  anchorIniciarSesionEl.forEach((anchor) => {
+    anchor.textContent = "Mi perfil";
+    anchor.href = "../html/profile.html";
+  });
+} else {
+  anchorIniciarSesionEl.forEach((anchor) => {
+    anchor.textContent = "Iniciar sesión";
+    anchor.href = "../html/loginRegister.html";
+  });
+}
+
 //PAGINACION
 let pagina = 0;
-let games = [];
 let urlNext = "";
+let obteniendoJuegos = false;
 
-iniciarPaginacion();
-getGames()
-  .then((data) => {
-    games = data.results;
-    urlNext = data.data.next;
-    controlPaginacion();
-  })
-  .catch((error) => console.log(error));
+cargarJuegos();
+export function cargarJuegos(next = undefined) {
+  iniciarPaginacion();
+  getGames(next)
+    .then((data) => {
+      games = data.results;
+      urlNext = data.data.next;
+      juego_al_azar();
+      controlPaginacion();
+    })
+    .catch((error) => console.log(error));
+}
 
-function iniciarPaginacion() {
+export function iniciarPaginacion() {
   avanzarEl.disabled = false;
   retrocederEl.disabled = true;
+
+  retrocederEl.classList.add("gris")
+
+
   pagina = 0;
 }
 
 avanzarEl.addEventListener("click", (ev) => {
   ev.preventDefault();
   pagina++;
+  window.scrollTo(0, gamesEl.offsetTop - 100);
   controlPaginacion();
 });
 
 retrocederEl.addEventListener("click", (ev) => {
   ev.preventDefault();
   pagina--;
+  window.scrollTo(0, gamesEl.offsetTop - 100);
   controlPaginacion();
 });
 
 function obtenerJuegos() {
+  if (obteniendoJuegos) return;
+  obteniendoJuegos = true;
   getGames(urlNext)
     .then((data) => {
       for (let i = 0; i < data.results.length; i++) {
@@ -40,9 +65,11 @@ function obtenerJuegos() {
       }
       urlNext = data.data.next;
       controlPaginacion();
+      obteniendoJuegos = false;
     })
     .catch((error) => {
       console.log(error);
+      obteniendoJuegos = false;
     });
 }
 
@@ -58,13 +85,45 @@ function controlPaginacion() {
   ) {
     avanzarEl.disabled = false;
   }
-  pagina > 0 ? (retrocederEl.disabled = false) : (retrocederEl.disabled = true);
+  /*pagina > 0 ? (retrocederEl.disabled = false) retrocederEl.classList.remove("gris") : (retrocederEl.disabled = true);*/
+  pagina > 0 ? (retrocederEl.disabled = false, retrocederEl.classList.remove("gris")) : (retrocederEl.disabled = true, retrocederEl.classList.add("gris"));
   renderGames(juegosAMostrar);
 }
 
-function renderGames(juegosAMostrar) {
+export function renderGames(juegosAMostrar) {
   gamesEl.innerHTML = "";
   juegosAMostrar.forEach((game) => {
-    gamesEl.appendChild(createGame(game));
+    const juego = createGameCard(game);
+    gamesEl.appendChild(juego);
   });
+  const cards = document.querySelectorAll("#card");
+  cards.forEach((card) => {
+    card.addEventListener("mouseover", (ev) => {
+      const imagen = card.querySelector(".game-img");
+      const contenedorLista = card.querySelector(".contenedorLista");
+      imagen.style.display = "block";
+      contenedorLista.style.display = "block";
+    });
+    card.addEventListener("mouseleave", (ev) => {
+      const imagen = card.querySelector(".game-img");
+      const contenedorLista = card.querySelector(".contenedorLista");
+      imagen.style.display = "block";
+      contenedorLista.style.display = "none";
+    });
+  });
+}
+
+/*FUNCIONALIDAD EN JUEGOS AL AZAR EN DIV DE FONDO*/
+export function juego_al_azar() {
+  let juego = games[Math.floor(Math.random() * games.length)];
+  let h4el = document.createElement("a");
+  h4el.classList.add("categoria");
+  h4el.textContent = ` ${juego.genres[0].name}`;
+  fondoDiv.style.backgroundImage = ` linear-gradient(to right, rgba(20, 30, 48, 0.7), rgba(36,59,85,0.7)), url(${juego.background_image})`;
+  tituloH1.textContent = juego.name;
+  fecha.textContent = `Estrenada : ${juego.released}`;
+  tituloH1.appendChild(h4el);
+  link.href = `../html/game.html?id=${juego.id}`;
+
+  contenedor_fondo1.appendChild(link);
 }

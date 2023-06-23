@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/loginRegister.js" type="module" defer></script>
+    <title>Usuarios</title>
+</head>
+
+<body>
+
+    <form id="login">
+        <h1>Login</h1>
+        <label>Email</label>
+        <input type="email" id="loginEmail" placeholder="Ingrese su email">
+        <label>Contraseña</label>
+        <input type="password" id="loginPassword" placeholder="Ingrese su contraseña">
+        <label>¿No tiene cuenta? <a href="#" class="anchorRegister">Registrese</a></label>
+        <button class="btnLogin">Login</button>
+    </form>
+    <form id="register">
+        <h1>Registrese</h1>
+        <label>Email</label>
+        <input type="email" id="registerEmail" placeholder="Ingrese su email">
+        <label>Contraseña</label>
+        <input type="password" id="registerPassword" placeholder="Ingrese su contraseña">
+        <label>Confirmar contraseña</label>
+        <input type="password" id="registerPasswordConfirmation" placeholder="Ingrese su contraseña">
+        <label>¿Ya tiene una cuenta? <a href="#" class="anchorLogin">Ingrese a su cuenta</a></label>
+        <button class="btnRegister">Register</button>
+    </form>
+
+</body>
+
+</html>
