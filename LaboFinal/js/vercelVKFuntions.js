@@ -23,7 +23,7 @@ export async function pushDB(key, data) {
     body: JSON.stringify(data),
     method: "POST",
   })
-    .then((response) => alert("Usuario creado correctamente"))
+    .then((response) => alert("Operacion realizada con exito"))
     .catch((err) => console.log(err));
 }
 

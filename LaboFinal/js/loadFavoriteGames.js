@@ -10,12 +10,12 @@ export async function loadFavoriteGames() {
   const tituloInfoProfile = document.querySelector(".tituloInfoProfile");
   const user = JSON.parse(localStorage.getItem("logeado"));
   const usuarioId = user.id;
+
   const userName = user.user.toUpperCase();
   nombreUsuario.innerHTML = userName;
 
   const juegosFavoritos = await getAll("games");
 
-  console.log(juegosFavoritos);
   const juegosUsuario = juegosFavoritos.filter(
     (juego) => juego.usuarioId.id == usuarioId
   );

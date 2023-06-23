@@ -9,7 +9,7 @@
 body {
   margin: 0;
   padding: 0;
- font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 
   background-color: #080f28;
   color: white;
@@ -89,6 +89,7 @@ h3 {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .ir-arriba {
@@ -132,25 +133,22 @@ div.sliders-indicator {
 }
 
 .stores-container {
-display: flex;
-/*justify-content: space-around;*/
-justify-content: center;
-gap: 69px;
-margin:  auto;
-margin-bottom: 200px;
-margin-top: 0;
-/*background-color: brown;*/
-width: 80%;
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-display: flex;
-
+  display: flex;
+  /*justify-content: space-around;*/
+  justify-content: center;
+  gap: 69px;
+  margin: auto;
+  margin-bottom: 200px;
+  margin-top: 0;
+  /*background-color: brown;*/
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: flex;
 }
 
-
-
-
-.stores {/*
+.stores {
+  /*
   transition: all 0.70s;
   background-color: white;
   text-decoration: none;
@@ -164,7 +162,7 @@ display: flex;
 align-items: center;
  gap: 30px;
   text-align: center;*/
-  transition: all 0.70s;
+  transition: all 0.7s;
   background-color: white;
   text-decoration: none;
   color: #080f28;
@@ -175,66 +173,58 @@ align-items: center;
   /* width: 18%; */
   display: flex;
   align-items: center;
-   gap: 5px;
-   justify-content: center; 
+  gap: 5px;
+  justify-content: center;
   text-align: center;
 }
 
-.stores:hover{
-  transition: all 0.70s;
+.stores:hover {
+  transition: all 0.7s;
   background-color: #42b883;
   color: white;
 }
 
-
-.titulo_tiendas{
- /* background-color: brown;*/
+.titulo_tiendas {
+  /* background-color: brown;*/
   font-size: 25px;
   margin-bottom: 50px;
 }
-.titulo_tiendas h2{
+.titulo_tiendas h2 {
   color: white;
 }
 
+.botones-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 50px;
+}
 
-
-
-
-
-
-@media (max-width: 1024px){
-  .stores{
+@media (max-width: 1024px) {
+  .stores {
     padding: 5px;
   }
 }
 
-
-
-
-
-
-@media (max-width: 810px){
-  .stores-container{
+@media (max-width: 810px) {
+  .stores-container {
     width: 90%;
-   flex-wrap: wrap;
-   gap: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
   }
-.stores{
-  padding: 8px 0;
+  .stores {
+    padding: 8px 0;
+  }
 }
 
- 
-}
-
-
-@media (max-width: 612px){
-  .stores-container{
+@media (max-width: 612px) {
+  .stores-container {
     width: 90%;
     display: grid;
     grid-template-columns: 1fr;
   }
 
-  .stores{
+  .stores {
     padding: 10px 0;
     justify-content: center;
   }
