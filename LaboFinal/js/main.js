@@ -35,8 +35,7 @@ export function iniciarPaginacion() {
   avanzarEl.disabled = false;
   retrocederEl.disabled = true;
 
-  retrocederEl.classList.add("gris")
-
+  retrocederEl.classList.add("gris");
 
   pagina = 0;
 }
@@ -86,7 +85,9 @@ function controlPaginacion() {
     avanzarEl.disabled = false;
   }
   /*pagina > 0 ? (retrocederEl.disabled = false) retrocederEl.classList.remove("gris") : (retrocederEl.disabled = true);*/
-  pagina > 0 ? (retrocederEl.disabled = false, retrocederEl.classList.remove("gris")) : (retrocederEl.disabled = true, retrocederEl.classList.add("gris"));
+  pagina > 0
+    ? ((retrocederEl.disabled = false), retrocederEl.classList.remove("gris"))
+    : ((retrocederEl.disabled = true), retrocederEl.classList.add("gris"));
   renderGames(juegosAMostrar);
 }
 
