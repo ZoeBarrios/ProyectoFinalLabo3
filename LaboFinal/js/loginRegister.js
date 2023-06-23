@@ -1,3 +1,5 @@
+import { getAll, pushDB } from "./vercelVKFuntions";
+
 const urlJsonServer = import.meta.env.VITE_API_URL_JSONSERVER;
 const formLogin = document.querySelector("#login");
 const formRegister = document.querySelector("#register");
@@ -23,11 +25,18 @@ formLogin.addEventListener("submit", async (e) => {
   const email = document.querySelector("#loginEmail").value;
   const password = document.querySelector("#loginPassword").value;
 
-  const yaExiste = await fetch(
-    `${urlJsonServer}/usuarios?email=${email}&password=${password}`
-  ).then((res) => res.json());
-  if (yaExiste.length > 0) {
-    localStorage.setItem("logeado", JSON.stringify(yaExiste[0].id));
+  let usuarios = await getAll("users");
+
+  let yaExiste = false;
+  if (usuarios) {
+    yaExiste = usuarios.find(
+      (usuario) => usuario.email === email && usuario.password === password
+    );
+  }
+
+  if (yaExiste) {
+    console.log(yaExiste);
+    localStorage.setItem("logeado", JSON.stringify(yaExiste.id));
     window.location.href = "/index.html";
   } else {
     alert("El usuario no existe");
@@ -45,24 +54,31 @@ formRegister.addEventListener("submit", async (e) => {
   const timestamp = Date.now();
   const id = `ID_${timestamp}`;
 
-  const yaExiste = await fetch(
-    `${urlJsonServer}/usuarios?email=${email}&password=${password}`
-  ).then((res) => res.json());
+  let usuarios = await getAll("users");
 
-  if (yaExiste == []) {
+  let yaExiste = false;
+  if (usuarios) {
+    yaExiste = usuarios.find(
+      (usuario) => usuario.email === email && usuario.password === password
+    );
+  }
+
+  if (yaExiste) {
     alert("El usuario ya existe");
   } else {
     if (password !== passwordConfirmation) {
       alert("Las contraseñas no coinciden");
       return;
     }
-    const nuevoUsuario = {
+    const user = {
       id,
       email,
       password,
     };
-    await fetch(`${urlJsonServer}/usuarios/POST`, nuevoUsuario);
-    alert("Usuario creado correctamente");
+
+    usuarios.push(user);
+    pushDB("users", usuarios);
+
     setTimeout(() => {
       formLogin.style.display = "block";
       formRegister.style.display = "none";

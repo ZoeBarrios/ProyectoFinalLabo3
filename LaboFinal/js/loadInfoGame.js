@@ -5,6 +5,7 @@ import {
   addScreenshots,
   addStores,
 } from "./components/game.js";
+import { getAll, pushDB } from "./vercelVKFuntions.js";
 
 const urlParams = new URLSearchParams(window.location.search);
 const juegoId = urlParams.get("id");
@@ -30,28 +31,25 @@ getGame(juegoId)
 function agregarFavoritos() {
   const favoritos = document.querySelector(".favoritos");
   favoritos.addEventListener("click", async (e) => {
-    const urlJsonServer = import.meta.env.VITE_API_URL_JSONSERVER;
     const usuarioId = JSON.parse(localStorage.getItem("logeado"));
     const juegoFavorito = await getGame(juegoId);
+    let juegos = await getAll("games");
+
+    let yaExiste = false;
+    if (juegos) {
+      yaExiste = juegos.find((juego) => juego.id === juegoId);
+    }
     if (juegoFavorito == undefined)
       return alert("No se pudo agregar a favoritos");
-    if (
-      (await fetch(
-        `${urlJsonServer}/favoritos?juegoId=${juegoFavorito.id}&usuarioId=${usuarioId.id}`
-      ).then((res) => res.json()).length) > 0
-    )
-      return alert("El juego ya esta en favoritos");
+    if (yaExiste) return alert("El juego ya esta en favoritos");
 
-    await fetch(`${urlJsonServer}/favoritos`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        juegoId: juegoFavorito.id,
-        usuarioId: usuarioId,
-        juegoFavorito,
-      }),
-    }).then((res) => alert("Juego agregado a favoritos"));
+    const juego = {
+      juegoId: juegoFavorito.id,
+      usuarioId,
+      juegoFavorito,
+    };
+
+    juegos.push(juego);
+    pushDB("games", juegos);
   });
 }
