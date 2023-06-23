@@ -21,10 +21,7 @@ getGame(juegoId)
     addScreenshots(juegoId);
   })
   .then(() => {
-    const favoritos = document.querySelector(".favoritos");
-    favoritos.addEventListener("click", (e) => {
-      agregarFavoritos();
-    });
+    agregarFavoritos();
   })
 
   .catch((error) => console.log(error));
@@ -32,6 +29,7 @@ getGame(juegoId)
 function agregarFavoritos() {
   const favoritos = document.querySelector(".favoritos");
   favoritos.addEventListener("click", async (e) => {
+    alert("HOLA");
     const usuarioId = JSON.parse(localStorage.getItem("logeado"));
     const juegoFavorito = await getGame(juegoId);
     let juegos = await getAll("games");
