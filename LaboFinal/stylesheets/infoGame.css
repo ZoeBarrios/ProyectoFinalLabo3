@@ -14,6 +14,20 @@ body {
   background-color: #080f28;
   color: white;
 }
+
+header {
+  background-color: #1b2838;
+  position: relative;
+}
+
+.cont_header {
+  margin: auto;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .game-info {
   margin: 20px;
 }
