@@ -5,6 +5,7 @@ import {
   addScreenshots,
   addStores,
 } from "./components/game.js";
+import { gameInfoEl } from "./dom.js";
 import { getAll, pushDB } from "./vercelVKFuntions.js";
 
 const urlParams = new URLSearchParams(window.location.search);

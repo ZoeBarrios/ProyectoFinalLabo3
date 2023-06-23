@@ -1,4 +1,12 @@
 import { cargarJuegos } from "./main.js";
+import {
+  tituloSeccionEl,
+  tituloLogo,
+  botonesFiltroEl,
+  buscadorEl,
+  retrocederEl,
+  avanzarEl,
+} from "./dom.js";
 const URL = import.meta.env.VITE_API_URL;
 const KEY = import.meta.env.VITE_API_KEY;
 botonesFiltroEl.forEach((boton) => {

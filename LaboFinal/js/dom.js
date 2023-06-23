@@ -1,16 +1,17 @@
-const avanzarEl = document.querySelector(".avanzar");
-const retrocederEl = document.querySelector(".retroceder");
-const gamesEl = document.querySelector(".games");
-const gameInfoEl = document.querySelector(".game-info");
-const botonesFiltroEl = document.querySelectorAll(".filtro");
-const buscadorEl = document.querySelectorAll("#buscador");
-const tituloSeccionEl = document.querySelector(".tituloSeccion");
-const tituloLogo = document.querySelector(".tituloLogo");
-const fondoDiv = document.querySelector(".fondo1");
-const tituloH1 = document.querySelector(".tituloJuego");
-const fecha = document.querySelector(".fecha_lanzamiento");
-const link = document.querySelector(".link_info");
-const contenedor_fondo1 = document.querySelector(".contenedor_fondo1");
-const anchorIniciarSesionEl = document.querySelectorAll(".anchorIniciarSesion");
-
-let games = [];
+export const avanzarEl = document.querySelector(".avanzar");
+export const retrocederEl = document.querySelector(".retroceder");
+export const gamesEl = document.querySelector(".games");
+export const gameInfoEl = document.querySelector(".game-info");
+export const botonesFiltroEl = document.querySelectorAll(".filtro");
+export const buscadorEl = document.querySelectorAll("#buscador");
+export const tituloSeccionEl = document.querySelector(".tituloSeccion");
+export const tituloLogo = document.querySelector(".tituloLogo");
+export const fondoDiv = document.querySelector(".fondo1");
+export const tituloH1 = document.querySelector(".tituloJuego");
+export const fecha = document.querySelector(".fecha_lanzamiento");
+export const link = document.querySelector(".link_info");
+export const contenedor_fondo1 = document.querySelector(".contenedor_fondo1");
+export const anchorIniciarSesionEl = document.querySelectorAll(
+  ".anchorIniciarSesion"
+);
+export let games = [];

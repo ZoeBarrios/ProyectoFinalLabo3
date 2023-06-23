@@ -1,5 +1,17 @@
 import { createGameCard } from "./components/gameCard.js";
 import { getGames } from "./gamesApiFunctions.js";
+import {
+  anchorIniciarSesionEl,
+  avanzarEl,
+  retrocederEl,
+  fondoDiv,
+  tituloH1,
+  fecha,
+  link,
+  contenedor_fondo1,
+  gamesEl,
+} from "./dom.js";
+let games = import("./dom.js");
 
 if (localStorage.getItem("logeado") != null) {
   anchorIniciarSesionEl.forEach((anchor) => {
@@ -35,8 +47,7 @@ export function iniciarPaginacion() {
   avanzarEl.disabled = false;
   retrocederEl.disabled = true;
 
-  retrocederEl.classList.add("gris")
-
+  retrocederEl.classList.add("gris");
 
   pagina = 0;
 }
@@ -86,7 +97,9 @@ function controlPaginacion() {
     avanzarEl.disabled = false;
   }
   /*pagina > 0 ? (retrocederEl.disabled = false) retrocederEl.classList.remove("gris") : (retrocederEl.disabled = true);*/
-  pagina > 0 ? (retrocederEl.disabled = false, retrocederEl.classList.remove("gris")) : (retrocederEl.disabled = true, retrocederEl.classList.add("gris"));
+  pagina > 0
+    ? ((retrocederEl.disabled = false), retrocederEl.classList.remove("gris"))
+    : ((retrocederEl.disabled = true), retrocederEl.classList.add("gris"));
   renderGames(juegosAMostrar);
 }
 
