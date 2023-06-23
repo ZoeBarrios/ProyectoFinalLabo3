@@ -1,5 +1,17 @@
 import { createGameCard } from "./components/gameCard.js";
 import { getGames } from "./gamesApiFunctions.js";
+import {
+  anchorIniciarSesionEl,
+  avanzarEl,
+  retrocederEl,
+  fondoDiv,
+  tituloH1,
+  fecha,
+  link,
+  contenedor_fondo1,
+  gamesEl,
+} from "./dom.js";
+let games = import("./dom.js");
 
 if (localStorage.getItem("logeado") != null) {
   anchorIniciarSesionEl.forEach((anchor) => {
