@@ -18,7 +18,7 @@ export function createGameInfo(game) {
 
   <div id="card">
 
-    <h1>${game.name}</h1>
+    <h1 class="titulo-info-game">${game.name}</h1>
     <div class="trailer-container"></div>
 
     <div class="game-info__image">
@@ -27,7 +27,6 @@ export function createGameInfo(game) {
   }" class="background-img-game" />
     </div>
     <div class="game-info__text">
-      <h2>${game.name}</h2>
       <p>${game.description.split("Español")[0]}</p>
       </div>
   </div>

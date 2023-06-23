@@ -58,8 +58,14 @@ header {
   flex-direction: column;
   align-items: center;
   border-radius: 0 0 10px 10px;
-  background-color: #131313;
+  background: linear-gradient(
+    109.6deg,
+    rgb(20, 30, 48) 11.2%,
+    rgb(36, 59, 85) 91.1%
+  );
   margin-bottom: 40px;
+  line-height: 2em;
+  font-size: 1.2em;
 }
 
 p {
@@ -81,10 +87,19 @@ h3 {
   margin: 15px 0 0 15px;
 }
 
+.titulo-info-game {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 3em;
+  color: gold;
+}
+
 .back-btn {
   padding: 10px 30px;
   color: #2a475e;
   font-weight: bold;
+  width: 15em;
   background: gold;
   border: none;
   border-radius: 10px;
@@ -138,7 +153,7 @@ div.sliders-indicator {
   justify-content: center;
   gap: 69px;
   margin: auto;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
   margin-top: 0;
   /*background-color: brown;*/
   width: 80%;
@@ -172,6 +187,7 @@ align-items: center;
   /* font-size: 18px; */
   /* width: 18%; */
   display: flex;
+  width: 15em;
   align-items: center;
   gap: 5px;
   justify-content: center;
@@ -187,10 +203,9 @@ align-items: center;
 .titulo_tiendas {
   /* background-color: brown;*/
   font-size: 25px;
+  color: gold;
+  text-align: center;
   margin-bottom: 50px;
-}
-.titulo_tiendas h2 {
-  color: white;
 }
 
 .botones-container {
@@ -203,10 +218,18 @@ align-items: center;
 @media (max-width: 1024px) {
   .stores {
     padding: 5px;
+    width: 100%;
   }
 }
 
 @media (max-width: 810px) {
+  .titulo-info-game {
+    font-size: 2em;
+    text-align: center;
+  }
+  .game-info__text {
+    font-size: 0.9em;
+  }
   .stores-container {
     width: 90%;
     flex-wrap: wrap;
