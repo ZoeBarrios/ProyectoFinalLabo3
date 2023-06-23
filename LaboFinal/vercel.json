@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "/LaboFinal/**",
+        "src": "/LaboFinal",
         "use": "@vercel/static-build",
         "config": {
           "zeroConfig": true
