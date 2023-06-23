@@ -17,3 +17,14 @@ $(document).ready(function () {
     }
   });
 });
+
+/* Loader */
+const loaderEl = document.querySelector(".load_container");
+window.onload = function(){
+  setTimeout(function(){
+	loaderEl.style.opacity = 0;
+	setTimeout(function(){
+	  loaderEl.style.display = "none";
+	}, 500);
+  }, 1500);
+} 
