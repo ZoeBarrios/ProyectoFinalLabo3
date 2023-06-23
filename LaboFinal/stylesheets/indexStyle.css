@@ -304,13 +304,19 @@ input::placeholder {
   background-color: #edededed;
   border-color: #edededed;
   border-style: solid;
+ 
 }
 /*ESTILOS PARA EL HEADER*/
+
+.carrito{
+  color: white;
+}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+
+ font-family: 'Inter', sans-serif;
   background-color:#080f28;
 
   color: white;
@@ -442,6 +448,40 @@ header {
 .contenedorLista ul {
 }
 
+
+
+
+
+.juegos_arcade, .juegos_adventure, .juegos_pelea, .juegos_shoter{
+ /* background-color: red;*/
+  margin: 50px auto;
+  width: 80%;
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*ESTILOS PARA CARDS Y JUEGOS*/
 
 @media (max-width: 1125px) {
@@ -458,6 +498,10 @@ header {
     gap: 15px;
     align-items: center;
   }
+.cont_explicacion{
+  width: 80%;
+}
+
 }
 
 

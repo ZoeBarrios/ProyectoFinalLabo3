@@ -9,8 +9,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
-  background-color: #2a475e;
+ font-family: "Roboto", sans-serif;
+
+  background-color: #080f28;
   color: white;
 }
 .game-info {
@@ -117,11 +118,110 @@ div.sliders-indicator {
 }
 
 .stores-container {
-  display: flex;
-  justify-content: space-between;
+display: flex;
+/*justify-content: space-around;*/
+justify-content: center;
+gap: 69px;
+margin:  auto;
+margin-bottom: 200px;
+margin-top: 0;
+/*background-color: brown;*/
+width: 80%;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+display: flex;
 
-  width: 100%;
 }
-.stores {
+
+
+
+
+.stores {/*
+  transition: all 0.70s;
   background-color: white;
+  text-decoration: none;
+  color:#080f28;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  /*width: 18%;
+display: flex;
+align-items: center;
+ gap: 30px;
+  text-align: center;*/
+  transition: all 0.70s;
+  background-color: white;
+  text-decoration: none;
+  color: #080f28;
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 8px;
+  /* font-size: 18px; */
+  /* width: 18%; */
+  display: flex;
+  align-items: center;
+   gap: 5px;
+   justify-content: center; 
+  text-align: center;
+}
+
+.stores:hover{
+  transition: all 0.70s;
+  background-color: #42b883;
+  color: white;
+}
+
+
+.titulo_tiendas{
+ /* background-color: brown;*/
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+.titulo_tiendas h2{
+  color: white;
+}
+
+
+
+
+
+
+
+@media (max-width: 1024px){
+  .stores{
+    padding: 5px;
+  }
+}
+
+
+
+
+
+
+@media (max-width: 810px){
+  .stores-container{
+    width: 90%;
+   flex-wrap: wrap;
+   gap: 20px;
+  }
+.stores{
+  padding: 8px 0;
+}
+
+ 
+}
+
+
+@media (max-width: 612px){
+  .stores-container{
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .stores{
+    padding: 10px 0;
+    justify-content: center;
+  }
 }
