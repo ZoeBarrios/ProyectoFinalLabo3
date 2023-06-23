@@ -11,4 +11,32 @@ export async function getGames(
   return { results, data };
 }
 
-function getGame(id) {}
+export async function getGame(id) {
+  return await fetch(`${URL}games/${id}?key=${KEY}`)
+    .then((response) => response.json())
+    .catch((error) => console.log(error));
+}
+
+export async function getGameTrailers(id) {
+  return await fetch(`${URL}games/${id}/movies?key=${KEY}`)
+    .then((response) => response.json())
+    .catch((error) => console.log(error));
+}
+
+export async function getGameScreenshots(id) {
+  return await fetch(`${URL}games/${id}/screenshots?key=${KEY}`)
+    .then((response) => response.json())
+    .catch((error) => console.log(error));
+}
+
+export async function getGameStores(id, name) {
+  return await fetch(`${URL}games/${id}/stores?key=${KEY}`)
+    .then((response) => response.json())
+    .catch((error) => console.log(error));
+}
+
+export async function getStoreInfo(id) {
+  return await fetch(`${URL}stores/${id}?key=${KEY}`)
+    .then((response) => response.json())
+    .catch((error) => console.log(error));
+}
