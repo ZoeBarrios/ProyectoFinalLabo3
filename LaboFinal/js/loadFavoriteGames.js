@@ -1,4 +1,5 @@
 import { createGameCard } from "./components/gameCard";
+import { nombreUsuario } from "./dom";
 import { getAll } from "./vercelVKFuntions";
 
 const listaJuegosFavoritos = document.querySelector(".listaJuegosFavoritos");
@@ -6,7 +7,11 @@ const listaJuegosFavoritos = document.querySelector(".listaJuegosFavoritos");
 loadFavoriteGames();
 
 export async function loadFavoriteGames() {
-  const usuarioId = JSON.parse(localStorage.getItem("logeado"));
+  const user = JSON.parse(localStorage.getItem("logeado"));
+  const usuarioId = user.id;
+  const userName = user.user.toUpperCase();
+  nombreUsuario.innerHTML = userName;
+
   const juegosFavoritos = await getAll("games");
   const juegosUsuario = juegosFavoritos.filter(
     (juego) => juego.usuarioId == usuarioId

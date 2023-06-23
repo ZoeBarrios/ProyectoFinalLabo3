@@ -11,6 +11,7 @@ export const tituloH1 = document.querySelector(".tituloJuego");
 export const fecha = document.querySelector(".fecha_lanzamiento");
 export const link = document.querySelector(".link_info");
 export const contenedor_fondo1 = document.querySelector(".contenedor_fondo1");
+export const nombreUsuario = document.querySelector(".nombreUsuario");
 export const anchorIniciarSesionEl = document.querySelectorAll(
   ".anchorIniciarSesion"
 );
