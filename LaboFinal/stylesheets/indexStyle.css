@@ -126,6 +126,7 @@ border-style: solid;
   gap: 40px;
   text-align: center;
   padding: 10px;
+  align-items: center;
 }
 .contenedorLista ul li{
   text-transform: uppercase;
