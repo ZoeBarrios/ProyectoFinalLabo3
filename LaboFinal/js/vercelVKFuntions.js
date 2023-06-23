@@ -26,3 +26,9 @@ export async function pushDB(key, data) {
     .then((response) => alert("Usuario creado correctamente"))
     .catch((err) => console.log(err));
 }
+
+export async function deleteOne(key, id) {
+  const elements = await getAll(key);
+  const elementsUpdated = elements.filter((element) => element.juegoId != id);
+  await pushDB(key, elementsUpdated).then(() => location.reload());
+}

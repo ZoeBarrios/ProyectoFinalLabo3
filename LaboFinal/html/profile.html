@@ -6,17 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../js/loadFavoriteGames.js" defer type="module"></script>
     <link rel="stylesheet" href="../stylesheets/indexStyle.css">
+    <link rel="stylesheet" href="../stylesheets/profile.css">
     <title>Perfil</title>
 </head>
 
 <body>
 
     <header>
+        <button class="btn" onclick="history.go(-1)">&#9664; Volver</button>
         <h1 class="nombreUsuario"></h1>
-        <button onclick="cerrarSesion()">Cerrar sesion</button>
+
+        <button onclick="cerrarSesion()" class="btn">Cerrar sesion</button>
     </header>
 
-    <div class="listaJuegosFavoritos">
+    <div class="contenedorInfoProfile">
+        <h2 class="tituloInfoProfile"></h2>
+        <div class="listaJuegosFavoritos"></div>
+
 
     </div>
 </body>

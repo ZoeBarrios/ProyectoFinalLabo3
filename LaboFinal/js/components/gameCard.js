@@ -9,26 +9,25 @@ export function createGameCard(game) {
   ratings.forEach((rating) => {
     const liEl = document.createElement("li");
 
+    /*CODIGO PARA EMOJIS*/
+    /*<i class="fa-solid fa-star estrella"></i>*/
+    let emoji = ``;
 
+    if (rating.title == "meh") {
+      emoji = `😐`;
+    } else if (rating.title == "recommended") {
+      emoji = `👍`;
+    } else if (rating.title == "exceptional") {
+      emoji = `😁`;
+    } else if (rating.title == "skip") {
+      emoji = `🤢`;
+    }
 
-/*CODIGO PARA EMOJIS*/
-/*<i class="fa-solid fa-star estrella"></i>*/
-let emoji = ``;
+    /*  liEl.textContent = `${rating.title} ${rating.percent.toFixed(2)}%`;*/
+    liEl.innerHTML = `${emoji} ${rating.title} ${rating.percent.toFixed(
+      2
+    )}%    `;
 
-if(rating.title == "meh"){
-emoji = `😐`
-} else if(rating.title == "recommended"){
-   emoji = `👍`;
-} else if (rating.title == "exceptional"){
-  emoji = `😁`
-} else if(rating.title == "skip"){
-  emoji = `🤢`
-}
-
-
-  /*  liEl.textContent = `${rating.title} ${rating.percent.toFixed(2)}%`;*/
-  liEl.innerHTML = `${emoji} ${rating.title} ${rating.percent.toFixed(2)}%    `;
-   
     ulEl.appendChild(liEl);
   });
 
@@ -46,7 +45,9 @@ emoji = `😐`
         <a href="../html/game.html?id=${game.id}">Ver más</a>
         <h3>${game.name}</h3>
         <span>${game.released || ""}</span>
-        <span>RATING ${game.rating ||  ""}<i class="fa-solid fa-star estrella"></i></span>
+        <span>RATING ${
+          game.rating || ""
+        }<i class="fa-solid fa-star estrella"></i></span>
       </div>
     </div>
   `;
