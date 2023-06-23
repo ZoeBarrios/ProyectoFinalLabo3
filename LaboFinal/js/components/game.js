@@ -12,20 +12,19 @@ export function createGameInfo(game) {
   gameInfo.innerHTML = `
 
   <div id="card">
-  <button><a href="../index.html">Volver</a></button>
-  <button class="favoritos">Agregar a favoritos</button>
-          <h1>${game.name}</h1>
-          <div class="game-info__image">
-          <img src="${game.background_image}" alt="${
-    game.name
-  }" class="background-img-game" />
-          </div>
-          <div class="game-info__text">
-          <h2>${game.name}</h2>
-          <p>${game.description.split("Español")[0]}</p>
-          </div>
+    <button><a href="../index.html">Volver</a></button>
+    <button class="favoritos">Agregar a favoritos</button>
+    <h1>${game.name}</h1>
+    <div class="trailer-container"></div>
 
-          </div>
+    <div class="game-info__image">
+     <img src="${game.background_image}" alt="${game.name}" class="background-img-game" />
+    </div>
+    <div class="game-info__text">
+      <h2>${game.name}</h2>
+      <p>${game.description.split("Español")[0]}</p>
+      </div>
+  </div>
 
     `;
 
