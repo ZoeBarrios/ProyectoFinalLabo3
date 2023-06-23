@@ -90,8 +90,13 @@
   line-height: 35px;
 }
 
+.show{
+  opacity: 1;
+}
+
 .contenedorLista {
   /* height: 280px;*/
+
   background-color: #080f2896;
   position: absolute;
   width: 100%;
@@ -101,6 +106,54 @@
   justify-content: center;
   align-items: center;
 }
+
+.desaparece{
+  transition: all 0.05s;
+  opacity: 0;
+}
+
+
+
+/*Estilos para el hover*/
+.contenedorLista {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  /* Resto de estilos */
+}
+
+.contenedorLista:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.0); /* Valor alfa ajustado a 0.3 */
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.contenedorLista:hover {
+  opacity: 1;
+}
+
+.contenedorLista:not(:hover) {
+  transition: opacity 0.5s ease-in 0.5s; /* Tiempo de transición adicional */
+  opacity: 0;
+}
+
+.contenedorLista:hover::after,
+.contenedorLista:not(:hover)::after {
+  opacity: 1;
+}
+
+.contenedorLista::after {
+  transition-delay: 0.5s; /* Tiempo de espera igual al tiempo de transición */
+}
+
+/*Estilos para el efecto hover*/
+
+
 
 .contenedorLista ul {
   background-color: #080f2896;
@@ -124,6 +177,8 @@
   align-items: center;
   font-size: 17px;
 }
+
+
 
 .estrella {
   color: gold;
@@ -311,13 +366,33 @@ body {
 .game-info {
   flex-grow: 2;
   padding: 5px 0;
+  display: flex;
+  flex-direction: column;
+
 }
 
 #card a {
-  color: gold;
+  transition: all 0.90s;
+  color: white;
   font-weight: bold;
   text-decoration: none;
+  background-color:#007aff ;
+  margin:15px auto;
+  width: 90%;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0px;
+  font-size: 18px;
 }
+
+#card a:hover{
+  transition: all 0.90s;
+  background-color: gold;
+  color: #080f28;
+ 
+
+}
+
 
 .games {
   margin: auto;

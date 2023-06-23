@@ -114,14 +114,18 @@ export function renderGames(juegosAMostrar) {
     card.addEventListener("mouseover", (ev) => {
       const imagen = card.querySelector(".game-img");
       const contenedorLista = card.querySelector(".contenedorLista");
-      imagen.style.display = "block";
+     imagen.style.display = "block";
+     
       contenedorLista.style.display = "block";
+     
     });
     card.addEventListener("mouseleave", (ev) => {
       const imagen = card.querySelector(".game-img");
       const contenedorLista = card.querySelector(".contenedorLista");
       imagen.style.display = "block";
-      contenedorLista.style.display = "none";
+    /*  contenedorLista.style.display = "none";*/
+      contenedorLista.classList.add("desaparece")
+    
     });
   });
 }
