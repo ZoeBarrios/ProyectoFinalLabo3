@@ -73,12 +73,10 @@ export function addStores(id) {
   const storesEl = document.querySelector(".stores-container");
 
   getGameStores(id).then((stores) => {
-    stores.results.forEach(async (store) => {
+    stores.results.forEach(async (store, index) => {
+      if (index > 3) return;
       const storeInfo = await getStoreInfo(store.store_id);
       storesEl.innerHTML += `<a href="${store.url}" target="_blank" class="stores"> <i class="fa-solid fa-cart-shopping carrito"></i> ${storeInfo.name}   </a>`;
     });
   });
-
-
-  
 }
