@@ -13,10 +13,25 @@
 
 .tituloLogo {
   display: flex;
+  align-items: center;
+
+/*font-family: 'Open Sans', sans-serif;*/
+font-family: 'Oswald', sans-serif;
 }
+
+
+
+
+
+
+
+
+
+
 .tituloLogo .mando1 {
   width: 50px;
   margin-left: 10px;
+  border-radius: 2em;
 }
 
 #fondo_explicacion {
@@ -266,7 +281,7 @@
   width: 100%;
   height: 350px;
   top: 70px;
-  display: none;
+  /*display: none;*/
 }
 
 .ocultar {
