@@ -132,7 +132,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0); 
+  background-color: rgba(0, 0, 0, 0);
   opacity: 0;
   transition: opacity 0.5s ease-in;
 }
@@ -142,7 +142,7 @@
 }
 
 .contenedorLista:not(:hover) {
-  transition: opacity 0.5s ease-in 0.5s; 
+  transition: opacity 0.5s ease-in 0.5s;
   opacity: 0;
 }
 
@@ -152,15 +152,15 @@
 }
 
 .contenedorLista::after {
-  transition-delay: 0.5s; 
+  transition-delay: 0.5s;
 }
 
 /*Estilos para el efecto hover*/
 
 .contenedorLista ul {
   background-color: #080f2896;
- /* height: 280px;*/
- height: 100%;
+  /* height: 280px;*/
+  height: 100%;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -417,11 +417,11 @@ body {
 
 header {
   background-color: #1b2838;
-    position: relative;
-    position: fixed;
-    width: 100%;
-    /* height: 96px; */
-    z-index: 999;
+  position: relative;
+  position: fixed;
+  width: 100%;
+  /* height: 96px; */
+  z-index: 999;
 }
 
 .cont_header {
@@ -531,22 +531,20 @@ header {
   font-weight: bold;
 }
 
-
 /*ESTILOS PARA EL FOOTER*/
-.github{
+.github {
   color: white;
   font-size: 30px;
   margin: 0 10px;
 }
 
-
-footer{
+footer {
   background-color: #111113;
-  padding:5px 0;
- margin-top: 10px;
+  padding: 5px 0;
+  margin-top: 10px;
 }
 
-.cont_footer{
+.cont_footer {
   background-color: #111113;
   margin: auto;
   width: 75%;
@@ -555,29 +553,24 @@ footer{
   align-items: center;
   flex-direction: column;
   padding: 20px;
- 
 }
 
-.cont_githubs{
+.cont_githubs {
   background-color: #111113;
- 
 }
-.cont_githubs ul{
+.cont_githubs ul {
   margin: 0;
   padding: 0;
-  
 }
 
-
-.cont_githubs ul a{
+.cont_githubs ul a {
   color: white;
   text-decoration: none;
   font-weight: bold;
   margin: 20px;
 }
+
 /*ESTILOS PARA EL FOOTER*/
-
-
 
 /*ESTILOS PARA CARDS Y JUEGOS*/
 
@@ -598,12 +591,10 @@ footer{
     width: 80%;
   }
 
-.cont_githubs ul{
-  display: grid;
-grid-template-columns: 1fr 1fr;
-}
-
-
+  .cont_githubs ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 880px) {

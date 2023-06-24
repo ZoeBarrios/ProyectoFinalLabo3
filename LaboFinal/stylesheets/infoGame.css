@@ -167,6 +167,10 @@ div.sliders-indicator {
   display: flex;
 }
 
+iframe {
+  width: 100%;
+}
+
 .stores {
   /*
   transition: all 0.70s;
@@ -259,5 +263,12 @@ align-items: center;
   .stores {
     padding: 10px 0;
     justify-content: center;
+  }
+}
+
+@media (max-width: 350px) {
+  .botones-container {
+    flex-direction: column;
+    align-items: center;
   }
 }

@@ -53,14 +53,12 @@ function crearTrailer(data, backgroundEl) {
   if (data.results.length == 0) return;
   const URLtrailer = data.results[0].data.max;
   const trailerEl = document.querySelector(".trailer-container");
+
   backgroundEl.style.display = "none";
-  const iframeConEl = document.createElement("div");
-  iframeConEl.innerHTML = `<iframe width="560" height="315" src="${URLtrailer}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-  trailerEl.innerHTML = iframeConEl.innerHTML;
-  setTimeout(() => {
-    trailerEl.innerHTML = "";
-    backgroundEl.style.display = "block";
-  }, 30000);
+
+  const iframe = document.createElement("iframe");
+  iframe.innerHTML = `<iframe width="560" height="315" src="${URLtrailer}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  trailerEl.innerHTML = iframe.innerHTML;
 }
 
 export function addScreenshots(juegoId) {

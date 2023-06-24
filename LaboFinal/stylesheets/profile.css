@@ -59,3 +59,31 @@
   border-radius: 10px;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .header-profile {
+    flex-direction: column;
+    height: 30%;
+  }
+
+  .tituloSeccion {
+    margin-top: 250px;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .listaJuegosFavoritos {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .listaJuegosFavoritos > .game {
+    flex: 1;
+    margin: 10px;
+    min-width: 250px;
+  }
+
+  .listaJuegosFavoritos #card {
+    height: 27em;
+  }
+}
