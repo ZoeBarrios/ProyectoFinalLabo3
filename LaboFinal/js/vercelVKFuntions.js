@@ -23,12 +23,12 @@ export async function pushDB(key, data) {
     body: JSON.stringify(data),
     method: "POST",
   })
-    .then((response) => alert("Operacion realizada con exito"))
+    .then((response) => response.json())
     .catch((err) => console.log(err));
 }
 
 export async function deleteOne(key, id) {
   const elements = await getAll(key);
   const elementsUpdated = elements.filter((element) => element.juegoId != id);
-  await pushDB(key, elementsUpdated).then(() => location.reload());
+  pushDB(key, elementsUpdated).catch((err) => console.log(err));
 }

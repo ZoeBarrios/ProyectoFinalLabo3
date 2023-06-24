@@ -1,3 +1,6 @@
+import Noty from "noty";
+import "noty/lib/noty.css";
+import "noty/lib/themes/mint.css";
 import { getGame } from "../js/gamesApiFunctions.js";
 import {
   createGameInfo,
@@ -39,9 +42,25 @@ function agregarFavoritos() {
       yaExiste = juegos.find((juego) => juego.juegoId == juegoId);
     }
 
-    if (juegoFavorito == undefined)
-      return alert("No se pudo agregar a favoritos");
-    if (yaExiste) return alert("El juego ya esta en favoritos");
+    if (juegoFavorito == undefined) {
+      new Noty({
+        theme: "mint",
+        text: "No se pudo agregar a favoritos",
+        type: "error",
+        timeout: 2000,
+      }).show();
+      return;
+    }
+
+    if (yaExiste) {
+      new Noty({
+        theme: "mint",
+        text: "Juego ya agregado a favoritos",
+        type: "error",
+        timeout: 2000,
+      }).show();
+      return;
+    }
 
     const juego = {
       juegoId: juegoFavorito.id,
@@ -50,6 +69,13 @@ function agregarFavoritos() {
     };
 
     juegos.push(juego);
-    pushDB("games", juegos);
+    pushDB("games", juegos).then(() => {
+      new Noty({
+        theme: "mint",
+        text: "Juego agregado a favoritos",
+        type: "success",
+        timeout: 2000,
+      }).show();
+    });
   });
 }
