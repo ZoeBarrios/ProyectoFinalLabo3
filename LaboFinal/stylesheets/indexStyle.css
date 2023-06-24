@@ -132,7 +132,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0); /* Valor alfa ajustado a 0.3 */
+  background-color: rgba(0, 0, 0, 0); 
   opacity: 0;
   transition: opacity 0.5s ease-in;
 }
@@ -142,7 +142,7 @@
 }
 
 .contenedorLista:not(:hover) {
-  transition: opacity 0.5s ease-in 0.5s; /* Tiempo de transición adicional */
+  transition: opacity 0.5s ease-in 0.5s; 
   opacity: 0;
 }
 
@@ -152,14 +152,15 @@
 }
 
 .contenedorLista::after {
-  transition-delay: 0.5s; /* Tiempo de espera igual al tiempo de transición */
+  transition-delay: 0.5s; 
 }
 
 /*Estilos para el efecto hover*/
 
 .contenedorLista ul {
   background-color: #080f2896;
-  height: 280px;
+ /* height: 280px;*/
+ height: 100%;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -416,7 +417,11 @@ body {
 
 header {
   background-color: #1b2838;
-  position: relative;
+    position: relative;
+    position: fixed;
+    width: 100%;
+    /* height: 96px; */
+    z-index: 999;
 }
 
 .cont_header {
@@ -526,6 +531,54 @@ header {
   font-weight: bold;
 }
 
+
+/*ESTILOS PARA EL FOOTER*/
+.github{
+  color: white;
+  font-size: 30px;
+  margin: 0 10px;
+}
+
+
+footer{
+  background-color: #111113;
+  padding:5px 0;
+ margin-top: 10px;
+}
+
+.cont_footer{
+  background-color: #111113;
+  margin: auto;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+ 
+}
+
+.cont_githubs{
+  background-color: #111113;
+ 
+}
+.cont_githubs ul{
+  margin: 0;
+  padding: 0;
+  
+}
+
+
+.cont_githubs ul a{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 20px;
+}
+/*ESTILOS PARA EL FOOTER*/
+
+
+
 /*ESTILOS PARA CARDS Y JUEGOS*/
 
 @media (max-width: 1125px) {
@@ -544,6 +597,13 @@ header {
   .cont_explicacion {
     width: 80%;
   }
+
+.cont_githubs ul{
+  display: grid;
+grid-template-columns: 1fr 1fr;
+}
+
+
 }
 
 @media (max-width: 880px) {
