@@ -1,5 +1,17 @@
 import { createGameCard } from "./components/gameCard.js";
 import { getGames } from "./gamesApiFunctions.js";
+import {
+  anchorIniciarSesionEl,
+  avanzarEl,
+  retrocederEl,
+  fondoDiv,
+  tituloH1,
+  fecha,
+  link,
+  contenedor_fondo1,
+  gamesEl,
+} from "./dom.js";
+let games = import("./dom.js");
 
 if (localStorage.getItem("logeado") != null) {
   anchorIniciarSesionEl.forEach((anchor) => {
@@ -35,8 +47,7 @@ export function iniciarPaginacion() {
   avanzarEl.disabled = false;
   retrocederEl.disabled = true;
 
-  retrocederEl.classList.add("gris")
-
+  retrocederEl.classList.add("gris");
 
   pagina = 0;
 }
@@ -78,7 +89,7 @@ function controlPaginacion() {
     obtenerJuegos(urlNext);
   }
   let juegosAMostrar = games.slice(pagina * 20, pagina * 20 + 20);
-  console.log(pagina);
+
   if (
     juegosAMostrar.length == 20 &&
     games.slice((pagina + 1) * 20, (pagina + 1) * 20 + 20) != 0
@@ -86,7 +97,9 @@ function controlPaginacion() {
     avanzarEl.disabled = false;
   }
   /*pagina > 0 ? (retrocederEl.disabled = false) retrocederEl.classList.remove("gris") : (retrocederEl.disabled = true);*/
-  pagina > 0 ? (retrocederEl.disabled = false, retrocederEl.classList.remove("gris")) : (retrocederEl.disabled = true, retrocederEl.classList.add("gris"));
+  pagina > 0
+    ? ((retrocederEl.disabled = false), retrocederEl.classList.remove("gris"))
+    : ((retrocederEl.disabled = true), retrocederEl.classList.add("gris"));
   renderGames(juegosAMostrar);
 }
 
@@ -102,13 +115,15 @@ export function renderGames(juegosAMostrar) {
       const imagen = card.querySelector(".game-img");
       const contenedorLista = card.querySelector(".contenedorLista");
       imagen.style.display = "block";
+
       contenedorLista.style.display = "block";
     });
     card.addEventListener("mouseleave", (ev) => {
       const imagen = card.querySelector(".game-img");
       const contenedorLista = card.querySelector(".contenedorLista");
       imagen.style.display = "block";
-      contenedorLista.style.display = "none";
+      /*  contenedorLista.style.display = "none";*/
+      contenedorLista.classList.add("desaparece");
     });
   });
 }
@@ -118,7 +133,7 @@ export function juego_al_azar() {
   let juego = games[Math.floor(Math.random() * games.length)];
   let h4el = document.createElement("a");
   h4el.classList.add("categoria");
-  h4el.textContent = ` ${juego.genres[0].name}`;
+  h4el.textContent = ` ${juego.genres[0]?.name || ""}`;
   fondoDiv.style.backgroundImage = ` linear-gradient(to right, rgba(20, 30, 48, 0.7), rgba(36,59,85,0.7)), url(${juego.background_image})`;
   tituloH1.textContent = juego.name;
   fecha.textContent = `Estrenada : ${juego.released}`;
