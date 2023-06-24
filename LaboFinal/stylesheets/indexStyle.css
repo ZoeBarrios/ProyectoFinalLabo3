@@ -442,6 +442,12 @@ header {
   font-size: 20px;
 }
 
+.anchorIniciarSesion {
+  background-color: rgb(130, 24, 24);
+  padding: 5px 10px;
+  border-radius: 2em;
+}
+
 .estilo_link {
   transition: all 0.9s;
   background-color: #007aff;
