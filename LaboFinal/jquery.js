@@ -100,12 +100,109 @@ $(".cont_header").find("nav").find("ul").find("a").eq(3).click(function (e) {
 
 $(".menu_oculto").hide();
 
-/*
-$(".menu_click").click(function (e) { 
-    e.preventDefault();
 
-    $(".menu_oculto").slideToggle();
-    
-});*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*mostrar div arcade*/
+$(".contenedor_menu").find("nav").find("ul").find("a").eq(0).click(function (e) { 
+    e.preventDefault();
+    $(".juegos_arcade").fadeIn(900);
+    $(".juegos_adventure").hide();
+    $(".juegos_pelea").hide();   
+    $(".juegos_shoter").hide();
+
+});
+
+
+/*mostrar div adventure*/
+$(".contenedor_menu").find("nav").find("ul").find("a").eq(1).click(function (e) { 
+    e.preventDefault();
+    $(".juegos_arcade").hide();
+    $(".juegos_adventure").fadeIn(900);
+    $(".juegos_pelea").hide();   
+    $(".juegos_shoter").hide();
+
+});
+
+
+/*mostrar div adventure*/
+$(".contenedor_menu").find("nav").find("ul").find("a").eq(2).click(function (e) { 
+    e.preventDefault();
+    $(".juegos_arcade").hide();
+    $(".juegos_adventure").hide();
+    $(".juegos_pelea").fadeIn(900);   
+    $(".juegos_shoter").hide();
+
+});
+
+
+
+/*mostrar div adventure*/
+$(".contenedor_menu").find("nav").find("ul").find("a").eq(3).click(function (e) { 
+    e.preventDefault();
+    $(".juegos_arcade").hide();
+    $(".juegos_adventure").hide();
+    $(".juegos_pelea").hide();   
+    $(".juegos_shoter").fadeIn(900);
+
+});
+
+
+
+
+
+
+
+
+
+
 
 });
