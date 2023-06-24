@@ -29,15 +29,16 @@ getGame(juegoId)
 function agregarFavoritos() {
   const favoritos = document.querySelector(".favoritos");
   favoritos.addEventListener("click", async (e) => {
-    alert("HOLA");
     const usuarioId = JSON.parse(localStorage.getItem("logeado"));
     const juegoFavorito = await getGame(juegoId);
     let juegos = await getAll("games");
 
     let yaExiste = false;
+
     if (juegos) {
-      yaExiste = juegos.find((juego) => juego.id === juegoId);
+      yaExiste = juegos.find((juego) => juego.juegoId == juegoId);
     }
+
     if (juegoFavorito == undefined)
       return alert("No se pudo agregar a favoritos");
     if (yaExiste) return alert("El juego ya esta en favoritos");

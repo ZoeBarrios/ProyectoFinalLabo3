@@ -90,7 +90,7 @@
   line-height: 35px;
 }
 
-.show{
+.show {
   opacity: 1;
 }
 
@@ -107,12 +107,10 @@
   align-items: center;
 }
 
-.desaparece{
+.desaparece {
   transition: all 0.05s;
   opacity: 0;
 }
-
-
 
 /*Estilos para el hover*/
 .contenedorLista {
@@ -128,7 +126,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.0); /* Valor alfa ajustado a 0.3 */
+  background-color: rgba(0, 0, 0, 0); /* Valor alfa ajustado a 0.3 */
   opacity: 0;
   transition: opacity 0.5s ease-in;
 }
@@ -153,8 +151,6 @@
 
 /*Estilos para el efecto hover*/
 
-
-
 .contenedorLista ul {
   background-color: #080f2896;
   height: 280px;
@@ -177,8 +173,6 @@
   align-items: center;
   font-size: 17px;
 }
-
-
 
 .estrella {
   color: gold;
@@ -289,7 +283,8 @@
   margin: 20px 0;
 }
 
-.nav2 ul li a {
+.nav2 ul li a,
+.eliminar {
   text-decoration: none;
   color: gold;
   font-weight: bold;
@@ -364,19 +359,24 @@ body {
 
 .game-info {
   flex-grow: 2;
+  text-align: center;
   padding: 5px 0;
   display: flex;
   flex-direction: column;
-
 }
 
-#card a {
-  transition: all 0.90s;
+.game-info > span {
+  margin-bottom: 10px;
+}
+
+#card a,
+.eliminar {
+  transition: all 0.9s;
   color: white;
   font-weight: bold;
   text-decoration: none;
-  background-color:#007aff ;
-  margin:15px auto;
+  background-color: #007aff;
+  margin: 15px auto;
   width: 90%;
   text-align: center;
   border-radius: 6px;
@@ -384,14 +384,12 @@ body {
   font-size: 18px;
 }
 
-#card a:hover{
-  transition: all 0.90s;
+#card a:hover,
+.eliminar:hover {
+  transition: all 0.9s;
   background-color: gold;
   color: #080f28;
- 
-
 }
-
 
 .games {
   margin: auto;
@@ -486,8 +484,6 @@ header {
   transition: ease-in-out 0.5s;
 }
 /*  Boton Go Up  */
-
-
 
 .juegos_arcade,
 .juegos_adventure,
