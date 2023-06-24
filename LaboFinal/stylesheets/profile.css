@@ -1,4 +1,4 @@
-header {
+.header-profile {
   margin: 0;
   padding: 0;
   position: fixed;
@@ -12,11 +12,16 @@ header {
   z-index: 99;
 }
 
+.eliminar {
+  text-align: center;
+}
+
 .nombreUsuario {
   font-size: 3em;
   font-weight: bold;
   margin: 0;
   padding: 0;
+  color: gold;
 }
 
 .contenedorInfoProfile {
@@ -40,6 +45,11 @@ header {
   margin: 10px;
   min-width: 250px;
 }
+
+.listaJuegosFavoritos #card {
+  height: 27em;
+}
+
 .btn {
   padding: 10px 30px;
   color: #2a475e;

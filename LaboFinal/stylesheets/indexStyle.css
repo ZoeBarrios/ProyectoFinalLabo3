@@ -105,7 +105,7 @@ font-family: 'Oswald', sans-serif;
   line-height: 35px;
 }
 
-.show{
+.show {
   opacity: 1;
 }
 
@@ -122,12 +122,10 @@ font-family: 'Oswald', sans-serif;
   align-items: center;
 }
 
-.desaparece{
+.desaparece {
   transition: all 0.05s;
   opacity: 0;
 }
-
-
 
 /*Estilos para el hover*/
 .contenedorLista {
@@ -143,7 +141,7 @@ font-family: 'Oswald', sans-serif;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.0); /* Valor alfa ajustado a 0.3 */
+  background-color: rgba(0, 0, 0, 0); /* Valor alfa ajustado a 0.3 */
   opacity: 0;
   transition: opacity 0.5s ease-in;
 }
@@ -168,8 +166,6 @@ font-family: 'Oswald', sans-serif;
 
 /*Estilos para el efecto hover*/
 
-
-
 .contenedorLista ul {
   background-color: #080f2896;
   height: 280px;
@@ -192,8 +188,6 @@ font-family: 'Oswald', sans-serif;
   align-items: center;
   font-size: 17px;
 }
-
-
 
 .estrella {
   color: gold;
@@ -304,7 +298,8 @@ font-family: 'Oswald', sans-serif;
   margin: 20px 0;
 }
 
-.nav2 ul li a {
+.nav2 ul li a,
+.eliminar {
   text-decoration: none;
   color: gold;
   font-weight: bold;
@@ -350,11 +345,10 @@ input::placeholder {
   background-color: #edededed;
   border-color: #edededed;
   border-style: solid;
- 
 }
 /*ESTILOS PARA EL HEADER*/
 
-.carrito{
+.carrito {
   color: white;
 }
 
@@ -362,7 +356,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  background-color:#080f28;
+  background-color: #080f28;
 
   color: white;
 }
@@ -374,25 +368,31 @@ body {
   color: white;
   padding: 10px;
   border-radius: 10px;
+  height: 33em;
   display: flex;
   flex-direction: column;
 }
 
 .game-info {
   flex-grow: 2;
+  text-align: center;
   padding: 5px 0;
   display: flex;
   flex-direction: column;
-
 }
 
-#card a {
-  transition: all 0.90s;
+.game-info > span {
+  margin-bottom: 10px;
+}
+
+#card a,
+.eliminar {
+  transition: all 0.9s;
   color: white;
   font-weight: bold;
   text-decoration: none;
-  background-color:#007aff ;
-  margin:15px auto;
+  background-color: #007aff;
+  margin: 15px auto;
   width: 90%;
   text-align: center;
   border-radius: 6px;
@@ -400,14 +400,12 @@ body {
   font-size: 18px;
 }
 
-#card a:hover{
-  transition: all 0.90s;
+#card a:hover,
+.eliminar:hover {
+  transition: all 0.9s;
   background-color: gold;
   color: #080f28;
- 
-
 }
-
 
 .games {
   margin: auto;
@@ -459,6 +457,12 @@ header {
   font-size: 20px;
 }
 
+.anchorIniciarSesion {
+  background-color: rgb(130, 24, 24);
+  padding: 5px 10px;
+  border-radius: 2em;
+}
+
 .estilo_link {
   transition: all 0.9s;
   background-color: #007aff;
@@ -503,47 +507,32 @@ header {
 }
 /*  Boton Go Up  */
 
-
-
-.juegos_arcade, .juegos_adventure, .juegos_pelea, .juegos_shoter{
+.juegos_arcade,
+.juegos_adventure,
+.juegos_pelea,
+.juegos_shoter {
   /* background-color: red;*/
-   margin: 50px auto;
-   width: 80%;
-   font-size: 20px;
- }
+  margin: 50px auto;
+  width: 80%;
+  font-size: 20px;
+}
 
+.listadoJuegos {
+  margin-top: 3em;
+}
 
+.contenedorLista ul {
+  gap: 15px;
+  align-items: center;
+}
 
-
-  .contenedorLista ul{
-    gap: 15px;
-    align-items: center;
-  }
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.tituloBuscado {
+  margin: 50px auto;
+  width: 80%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
 
 /*ESTILOS PARA CARDS Y JUEGOS*/
 
@@ -560,10 +549,9 @@ header {
     gap: 15px;
     align-items: center;
   }
-.cont_explicacion{
-  width: 80%;
-}
-
+  .cont_explicacion {
+    width: 80%;
+  }
 }
 
 @media (max-width: 880px) {

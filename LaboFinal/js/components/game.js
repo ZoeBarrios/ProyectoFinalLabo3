@@ -4,24 +4,29 @@ import {
   getGameStores,
   getStoreInfo,
 } from "../gamesApiFunctions.js";
+const usuario = localStorage.getItem("logeado");
 let mostrandoVideo = false;
 
 export function createGameInfo(game) {
+  if (!usuario) {
+    const botonFavorito = document.querySelector(".favoritos");
+    botonFavorito.style.display = "none";
+  }
   const gameInfo = document.createElement("div");
   gameInfo.classList.add("game-info__container");
   gameInfo.innerHTML = `
 
   <div id="card">
-    <button><a href="../index.html">Volver</a></button>
-    <button class="favoritos">Agregar a favoritos</button>
-    <h1>${game.name}</h1>
+
+    <h1 class="titulo-info-game">${game.name}</h1>
     <div class="trailer-container"></div>
 
     <div class="game-info__image">
-     <img src="${game.background_image}" alt="${game.name}" class="background-img-game" />
+     <img src="${game.background_image}" alt="${
+    game.name
+  }" class="background-img-game" />
     </div>
     <div class="game-info__text">
-      <h2>${game.name}</h2>
       <p>${game.description.split("Español")[0]}</p>
       </div>
   </div>
@@ -72,12 +77,10 @@ export function addStores(id) {
   const storesEl = document.querySelector(".stores-container");
 
   getGameStores(id).then((stores) => {
-    stores.results.forEach(async (store) => {
+    stores.results.forEach(async (store, index) => {
+      if (index > 3) return;
       const storeInfo = await getStoreInfo(store.store_id);
       storesEl.innerHTML += `<a href="${store.url}" target="_blank" class="stores"> <i class="fa-solid fa-cart-shopping carrito"></i> ${storeInfo.name}   </a>`;
     });
   });
-
-
-  
 }

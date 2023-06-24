@@ -21,10 +21,7 @@ getGame(juegoId)
     addScreenshots(juegoId);
   })
   .then(() => {
-    const favoritos = document.querySelector(".favoritos");
-    favoritos.addEventListener("click", (e) => {
-      agregarFavoritos();
-    });
+    agregarFavoritos();
   })
 
   .catch((error) => console.log(error));
@@ -37,9 +34,11 @@ function agregarFavoritos() {
     let juegos = await getAll("games");
 
     let yaExiste = false;
+
     if (juegos) {
-      yaExiste = juegos.find((juego) => juego.id === juegoId);
+      yaExiste = juegos.find((juego) => juego.juegoId == juegoId);
     }
+
     if (juegoFavorito == undefined)
       return alert("No se pudo agregar a favoritos");
     if (yaExiste) return alert("El juego ya esta en favoritos");

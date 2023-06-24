@@ -1,6 +1,6 @@
-import { createGameCard } from "./components/gameCard";
+import { createGameCardProfile } from "./components/gameCardProfile";
 import { nombreUsuario } from "./dom";
-import { deleteOne, getAll } from "./vercelVKFuntions";
+import { getAll } from "./vercelVKFuntions";
 
 const listaJuegosFavoritos = document.querySelector(".listaJuegosFavoritos");
 
@@ -10,12 +10,12 @@ export async function loadFavoriteGames() {
   const tituloInfoProfile = document.querySelector(".tituloInfoProfile");
   const user = JSON.parse(localStorage.getItem("logeado"));
   const usuarioId = user.id;
+
   const userName = user.user.toUpperCase();
   nombreUsuario.innerHTML = userName;
 
   const juegosFavoritos = await getAll("games");
 
-  console.log(juegosFavoritos);
   const juegosUsuario = juegosFavoritos.filter(
     (juego) => juego.usuarioId.id == usuarioId
   );
@@ -25,16 +25,7 @@ export async function loadFavoriteGames() {
   } else {
     tituloInfoProfile.innerHTML = `<h1 class="tituloSeccion">Juegos favoritos</h1>`;
     juegosUsuario.forEach((juegosFavoritos) => {
-      const botonEliminar = document.createElement("button");
-      const juegoFavoritoCreado = createGameCard(juegosFavoritos.juegoFavorito);
-      botonEliminar.innerHTML = `<i class="fa-solid fa-trash">Eliminar</i>`;
-      botonEliminar.classList.add("botonEliminar");
-      botonEliminar.addEventListener("click", async () => {
-        const id = juegosFavoritos.juegoFavorito.id;
-        await deleteOne("games", id);
-      });
-      juegoFavoritoCreado.appendChild(botonEliminar);
-      listaJuegosFavoritos.appendChild(juegoFavoritoCreado);
+      listaJuegosFavoritos.appendChild(createGameCardProfile(juegosFavoritos));
     });
   }
 }

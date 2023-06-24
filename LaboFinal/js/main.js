@@ -89,7 +89,7 @@ function controlPaginacion() {
     obtenerJuegos(urlNext);
   }
   let juegosAMostrar = games.slice(pagina * 20, pagina * 20 + 20);
-  console.log(pagina);
+
   if (
     juegosAMostrar.length == 20 &&
     games.slice((pagina + 1) * 20, (pagina + 1) * 20 + 20) != 0
@@ -114,18 +114,16 @@ export function renderGames(juegosAMostrar) {
     card.addEventListener("mouseover", (ev) => {
       const imagen = card.querySelector(".game-img");
       const contenedorLista = card.querySelector(".contenedorLista");
-     imagen.style.display = "block";
-     
+      imagen.style.display = "block";
+
       contenedorLista.style.display = "block";
-     
     });
     card.addEventListener("mouseleave", (ev) => {
       const imagen = card.querySelector(".game-img");
       const contenedorLista = card.querySelector(".contenedorLista");
       imagen.style.display = "block";
-    /*  contenedorLista.style.display = "none";*/
-      contenedorLista.classList.add("desaparece")
-    
+      /*  contenedorLista.style.display = "none";*/
+      contenedorLista.classList.add("desaparece");
     });
   });
 }
@@ -135,7 +133,7 @@ export function juego_al_azar() {
   let juego = games[Math.floor(Math.random() * games.length)];
   let h4el = document.createElement("a");
   h4el.classList.add("categoria");
-  h4el.textContent = ` ${juego.genres[0].name}`;
+  h4el.textContent = ` ${juego.genres[0]?.name || ""}`;
   fondoDiv.style.backgroundImage = ` linear-gradient(to right, rgba(20, 30, 48, 0.7), rgba(36,59,85,0.7)), url(${juego.background_image})`;
   tituloH1.textContent = juego.name;
   fecha.textContent = `Estrenada : ${juego.released}`;

@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 
-  <script src="./jquery-latest.js" type="module"></script>
+
 
 
   <link
@@ -25,20 +25,21 @@
 <body>
 
   <!--Loader-->
-   <div class="load_container">
+  <div class="load_container">
     <div class="loader">
       <svg class="logo" width="200px" height="200px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-        <path class="a" d="M24.0152,28.1932c7.0647.0718,8.62,10.6443,16.1734,7.6038,6.3671-2.5628,1.8993-14.0563.181-17.828-2.0731-4.5511-5.4238-6.1232-8.0836-6.15-3.1794-.0324-5.3475,2.73-8.1319,2.7021s-4.8962-2.8344-8.0754-2.8667c-2.66-.027-6.0412,1.476-8.2071,5.9849C6.077,21.3752,1.3768,32.7756,7.6905,35.4672,15.1807,38.66,16.95,28.1215,24.0152,28.1932Z"/>
-        <circle class="a" cx="15.608" cy="21.167" r="4.344"/>
-        <circle class="a" cx="31.0049" cy="19.2869" r="1.4961"/>
-        <circle class="a" cx="34.9108" cy="23.2729" r="1.4961"/>
-        <line class="a" x1="15.608" y1="23.4928" x2="15.608" y2="18.8411"/>
-        <line class="a" x1="13.2822" y1="21.167" x2="17.9339" y2="21.167"/>
+        <path class="a"
+          d="M24.0152,28.1932c7.0647.0718,8.62,10.6443,16.1734,7.6038,6.3671-2.5628,1.8993-14.0563.181-17.828-2.0731-4.5511-5.4238-6.1232-8.0836-6.15-3.1794-.0324-5.3475,2.73-8.1319,2.7021s-4.8962-2.8344-8.0754-2.8667c-2.66-.027-6.0412,1.476-8.2071,5.9849C6.077,21.3752,1.3768,32.7756,7.6905,35.4672,15.1807,38.66,16.95,28.1215,24.0152,28.1932Z" />
+        <circle class="a" cx="15.608" cy="21.167" r="4.344" />
+        <circle class="a" cx="31.0049" cy="19.2869" r="1.4961" />
+        <circle class="a" cx="34.9108" cy="23.2729" r="1.4961" />
+        <line class="a" x1="15.608" y1="23.4928" x2="15.608" y2="18.8411" />
+        <line class="a" x1="13.2822" y1="21.167" x2="17.9339" y2="21.167" />
       </svg>
     </div>
-   </div>
-   <!---->
-  
+  </div>
+  <!---->
+
   <header>
 
     <div class="menu_oculto">
@@ -86,7 +87,7 @@
 
 
       </nav>
-    
+
 
       <div class="div_input">
         <i class="fa-solid fa-magnifying-glass lupa"></i><input type="text" id="buscador" placeholder="Buscar...">
@@ -130,16 +131,25 @@
   </div>
 
 
-<!----
+  <!----
   <h1 class="tituloSeccion">Juegos</h1>--->
 
-<div class="juegos_arcade"><h1>Games Arcade</h1></div>
-<div class="juegos_adventure"><h1>Games Adventure</h1></div>
-<div class="juegos_pelea"><h1>Games Fighting</h1></div>
-<div class="juegos_shoter"><h1>Games Shooter</h1></div>
+  <div class="juegos_arcade titulo">
+    <h1>Arcade Games</h1>
+  </div>
+  <div class="juegos_adventure titulo">
+    <h1>Adventure Games</h1>
+  </div>
+  <div class="juegos_pelea titulo">
+    <h1>Fighting Games</h1>
+  </div>
+  <div class="juegos_shoter titulo">
+    <h1>Shooter Games</h1>
+  </div>
 
 
   <div class="listadoJuegos">
+
     <div class="games">
 
     </div>
@@ -157,6 +167,7 @@
   </div>
   <div class="ir-arriba">&#708;</div>
 
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
