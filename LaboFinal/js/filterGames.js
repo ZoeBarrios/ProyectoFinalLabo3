@@ -13,7 +13,8 @@ const KEY = import.meta.env.VITE_API_KEY;
 botonesFiltroEl.forEach((boton) => {
   boton.addEventListener("click", (ev) => {
     ev.preventDefault();
-
+    retrocederEl.style.display = "block";
+    avanzarEl.style.display = "block";
     const genre = ev.target.innerText.toLowerCase();
     const url = `${URL}games?page_size=40&page=1&genres=${genre}&key=${KEY}`;
     cargarJuegos(url);
@@ -37,6 +38,8 @@ buscadorEl.forEach((buscador) => {
 
 tituloLogo.addEventListener("click", (ev) => {
   ev.preventDefault();
+  retrocederEl.style.display = "block";
+  avanzarEl.style.display = "block";
   cargarJuegos();
   titulosListado.forEach((titulo) => {
     titulo.style.display = "none";
