@@ -1,3 +1,6 @@
+import Noty from "noty";
+import "noty/lib/noty.css";
+import "noty/lib/themes/mint.css";
 import { getAll, pushDB } from "./vercelVKFuntions";
 
 const containerLoginEl = document.querySelector(".container-login");
@@ -44,9 +47,11 @@ anchorRegister.addEventListener("click", (e) => {
 formLogin.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const email = document.querySelector("#loginEmail").value;
-  const password = document.querySelector("#loginPassword").value;
-  const user = document.querySelector("#loginUser").value;
+  const email = document.querySelector("#loginEmail");
+  const password = document.querySelector("#loginPassword");
+  const user = document.querySelector("#loginUser");
+
+  if (validate([user, email, password]) == false) return;
 
   let usuarios = await getAll("users");
 
@@ -54,35 +59,42 @@ formLogin.addEventListener("submit", async (e) => {
   if (usuarios) {
     yaExiste = usuarios.find(
       (usuario) =>
-        usuario.email === email &&
-        usuario.password === password &&
-        usuario.user === user
+        usuario.email === email.value &&
+        usuario.password === password.value &&
+        usuario.user === user.value
     );
   }
 
   if (yaExiste) {
-    console.log(yaExiste);
     localStorage.setItem(
       "logeado",
-      JSON.stringify({ id: yaExiste.id, user: user })
+      JSON.stringify({ id: yaExiste.id, user: user.value })
     );
     window.location.href = "/index.html";
   } else {
-    alert("El usuario no existe");
+    new Noty({
+      theme: "mint",
+      text: "Usuario o contraseña incorrectos",
+      type: "error",
+      timeout: 2000,
+    }).show();
   }
 });
 
 formRegister.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const email = document.querySelector("#registerEmail").value;
-  const password = document.querySelector("#registerPassword").value;
-  const userInput = document.querySelector("#registerUser").value;
+  const email = document.querySelector("#registerEmail");
+  const password = document.querySelector("#registerPassword");
+  const userInput = document.querySelector("#registerUser");
   const passwordConfirmation = document.querySelector(
     "#registerPasswordConfirmation"
-  ).value;
+  );
   const timestamp = Date.now();
   const id = `ID_${timestamp}`;
+
+  if (validate([userInput, email, password, passwordConfirmation]) == false)
+    return;
 
   let usuarios = await getAll("users");
 
@@ -90,32 +102,68 @@ formRegister.addEventListener("submit", async (e) => {
   if (usuarios) {
     yaExiste = usuarios.find(
       (usuario) =>
-        usuario.email === email &&
-        usuario.password === password &&
-        usuario.user === userInput
+        usuario.email === email.value &&
+        usuario.password === password.value &&
+        usuario.user === userInput.value
     );
   }
 
   if (yaExiste) {
-    alert("El usuario ya existe");
+    new Noty({
+      theme: "mint",
+      text: "El usuario ya existe",
+      type: "error",
+      timeout: 2000,
+    }).show();
   } else {
-    if (password !== passwordConfirmation) {
-      alert("Las contraseñas no coinciden");
+    if (password.value !== passwordConfirmation.value) {
+      new Noty({
+        theme: "mint",
+        text: "Las contraseñas no coinciden",
+        type: "error",
+        timeout: 2000,
+      }).show();
       return;
     }
     const user = {
       id,
-      email,
-      password,
-      user: userInput,
+      email: email.value,
+      password: password.value,
+      user: userInput.value,
     };
 
     usuarios.push(user);
     pushDB("users", usuarios);
 
+    new Noty({
+      theme: "mint",
+      text: "Usuario creado correctamente",
+      type: "success",
+      timeout: 2000,
+    }).show();
     setTimeout(() => {
       containerLoginEl.style.display = "flex";
       containerRegisterEl.style.display = "none";
     }, 2000);
   }
 });
+function validate(inputs) {
+  let todoOk = true;
+  for (let i = 0; i < inputs.length; i++) {
+    const input = inputs[i];
+    if (input.value.trim() === "") {
+      new Noty({
+        theme: "mint",
+        text: "Todos los campos son obligatorios",
+        type: "error",
+        timeout: 2000,
+      }).show();
+      input.classList.add("error");
+      todoOk = false;
+      break;
+    } else {
+      input.classList.remove("error");
+    }
+  }
+  return todoOk;
+}
