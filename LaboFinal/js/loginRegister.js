@@ -1,21 +1,44 @@
 import { getAll, pushDB } from "./vercelVKFuntions";
 
+const containerLoginEl = document.querySelector(".container-login");
+const containerRegisterEl = document.querySelector(".container-register");
 const formLogin = document.querySelector("#login");
 const formRegister = document.querySelector("#register");
 const anchorLogin = document.querySelector(".anchorLogin");
 const anchorRegister = document.querySelector(".anchorRegister");
+const togglePasswordButton = document.querySelectorAll(".togglePassword");
+const passwordInput = document.querySelectorAll(
+  "#loginPassword , #registerPassword"
+);
 
-formRegister.style.display = "none";
+togglePasswordButton.forEach((button) => {
+  button.addEventListener("click", function () {
+    passwordInput.forEach((input) => {
+      if (input.type === "password") {
+        togglePasswordButton.forEach((button) => {
+          button.style.color = "#4e9eff";
+        });
+        input.type = "text";
+      } else {
+        togglePasswordButton.forEach((button) => {
+          button.style.color = "black";
+        });
+        input.type = "password";
+      }
+    });
+  });
+});
+
 anchorLogin.addEventListener("click", (e) => {
   e.preventDefault();
-  formLogin.style.display = "block";
-  formRegister.style.display = "none";
+  containerLoginEl.style.display = "flex";
+  containerRegisterEl.style.display = "none";
 });
 
 anchorRegister.addEventListener("click", (e) => {
   e.preventDefault();
-  formLogin.style.display = "none";
-  formRegister.style.display = "block";
+  containerLoginEl.style.display = "none";
+  containerRegisterEl.style.display = "flex";
 });
 
 formLogin.addEventListener("submit", async (e) => {
@@ -54,7 +77,7 @@ formRegister.addEventListener("submit", async (e) => {
 
   const email = document.querySelector("#registerEmail").value;
   const password = document.querySelector("#registerPassword").value;
-  const userInput = document.querySelector("#loginUser").value;
+  const userInput = document.querySelector("#registerUser").value;
   const passwordConfirmation = document.querySelector(
     "#registerPasswordConfirmation"
   ).value;
@@ -91,8 +114,8 @@ formRegister.addEventListener("submit", async (e) => {
     pushDB("users", usuarios);
 
     setTimeout(() => {
-      formLogin.style.display = "block";
-      formRegister.style.display = "none";
+      containerLoginEl.style.display = "flex";
+      containerRegisterEl.style.display = "none";
     }, 2000);
   }
 });

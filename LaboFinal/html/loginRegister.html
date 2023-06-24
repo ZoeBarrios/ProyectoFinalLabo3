@@ -5,34 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../js/loginRegister.js" type="module" defer></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Corinthia&family=Fira+Sans&family=Inter:wght@200&family=Lora&family=Mada:wght@300&family=Montserrat:wght@100;200&family=Mulish:wght@300&family=Nunito:ital,wght@1,300&family=Open+Sans:ital,wght@1,300;1,800&family=Oswald:wght@500&family=PT+Sans:ital@1&family=Poppins:wght@200&family=Roboto:wght@300&family=Titillium+Web:wght@300&family=Yellowtail&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/loginRegister.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Usuarios</title>
 </head>
 
 <body>
 
-    <form id="login">
-        <h1>Login</h1>
-        <input type="text" id="loginUser" placeholder="Ingrese su nombre">
-        <label>Email</label>
-        <input type="email" id="loginEmail" placeholder="Ingrese su email">
-        <label>Contraseña</label>
-        <input type="password" id="loginPassword" placeholder="Ingrese su contraseña">
-        <label>¿No tiene cuenta? <a href="#" class="anchorRegister">Registrese</a></label>
-        <button class="btnLogin">Login</button>
-    </form>
-    <form id="register">
-        <h1>Registrese</h1>
-        <label>Email</label>
-        <input type="text" id="loginUser" placeholder="Ingrese su nombre">
-        <input type="email" id="registerEmail" placeholder="Ingrese su email">
-        <label>Contraseña</label>
-        <input type="password" id="registerPassword" placeholder="Ingrese su contraseña">
-        <label>Confirmar contraseña</label>
-        <input type="password" id="registerPasswordConfirmation" placeholder="Ingrese su contraseña">
-        <label>¿Ya tiene una cuenta? <a href="#" class="anchorLogin">Ingrese a su cuenta</a></label>
-        <button class="btnRegister">Register</button>
-    </form>
 
+    <div class="container-forms">
+        <div class="container-login">
+            <form id="login">
+                <h1>Login</h1>
+                <label>Nombre</label>
+                <input type="text" id="loginUser" placeholder="Ingrese su nombre" class="input" autocomplete="off">
+
+                <label>Email</label>
+                <input type="email" id="loginEmail" placeholder="Ingrese su email" class="input" autocomplete="off">
+                <label>Contraseña</label>
+                <div class="password-container">
+                    <input type="password" id="loginPassword" placeholder="Ingrese su contraseña" class="input">
+                    <button id="togglePassword" class="toggle-password-button togglePassword" type="button">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <label>¿No tiene una cuenta? <a href="#" class="anchorRegister">Registrese</a></label>
+                <button class="btnLogin">Login</button>
+            </form>
+        </div>
+        <div class="container-register">
+            <form id="register">
+                <h1>Registrese</h1>
+                <label>Nombre</label>
+                <input type="text" id="registerUser" placeholder="Ingrese su nombre" class="input" autocomplete="off">
+                <label>Email</label>
+                <input type="email" id="registerEmail" placeholder="Ingrese su email" class="input" autocomplete="off">
+                <label>Contraseña</label>
+                <div class="password-container">
+                    <input type="password" id="registerPassword" placeholder="Ingrese su contraseña" class="input"
+                        autocomplete="off">
+                    <button class="toggle-password-button togglePassword" type="button">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <label>Confirmar contraseña</label>
+                <input type="password" id="registerPasswordConfirmation" placeholder="Ingrese su contraseña"
+                    class="input" autocomplete="off">
+
+
+                <label>¿Ya tiene una cuenta? <a href="#" class="anchorLogin">Ingrese a su cuenta</a></label>
+                <button class="btnRegister">Register</button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

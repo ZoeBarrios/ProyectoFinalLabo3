@@ -20,6 +20,11 @@ header {
   position: relative;
 }
 
+.game-info__container {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .cont_header {
   margin: auto;
   width: 70%;
@@ -228,7 +233,7 @@ align-items: center;
     text-align: center;
   }
   .game-info__text {
-    font-size: 0.9em;
+    font-size: 1.5em;
   }
   .stores-container {
     width: 90%;
@@ -241,6 +246,10 @@ align-items: center;
 }
 
 @media (max-width: 612px) {
+  .game-info__container {
+    width: 100%;
+  }
+
   .stores-container {
     width: 90%;
     display: grid;
