@@ -1,3 +1,4 @@
+import { showLoader, stopLoader, opts } from "./loader.js";
 import { createGameCardProfile } from "./components/gameCardProfile";
 import { nombreUsuario } from "./dom";
 import { getAll } from "./vercelVKFuntions";
@@ -5,7 +6,6 @@ import { getAll } from "./vercelVKFuntions";
 const listaJuegosFavoritos = document.querySelector(".listaJuegosFavoritos");
 
 loadFavoriteGames();
-
 export async function loadFavoriteGames() {
   const tituloInfoProfile = document.querySelector(".tituloInfoProfile");
   const user = JSON.parse(localStorage.getItem("logeado"));
@@ -14,6 +14,7 @@ export async function loadFavoriteGames() {
   const userName = user.user.toUpperCase();
   nombreUsuario.innerHTML = userName;
 
+  showLoader(listaJuegosFavoritos);
   const juegosFavoritos = await getAll("games");
 
   const juegosUsuario = juegosFavoritos.filter(
@@ -28,4 +29,5 @@ export async function loadFavoriteGames() {
       listaJuegosFavoritos.appendChild(createGameCardProfile(juegosFavoritos));
     });
   }
+  stopLoader();
 }

@@ -1,7 +1,7 @@
 import { Spinner } from "spin.js";
 import "../node_modules/spin.js/spin.css";
 
-var opts = {
+export var opts = {
   lines: 13, // The number of lines to draw
   length: 38, // The length of each line
   width: 17, // The line thickness
