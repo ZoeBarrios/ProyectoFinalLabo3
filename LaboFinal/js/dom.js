@@ -14,6 +14,7 @@ export const contenedor_fondo1 = document.querySelector(".contenedor_fondo1");
 export const nombreUsuario = document.querySelector(".nombreUsuario");
 export const fondoExplicacion = document.querySelector("#fondo_explicacion");
 export const titulosListado = document.querySelectorAll(".titulo");
+export const listadoJuegos = document.querySelector(".listadoJuegos");
 export const anchorIniciarSesionEl = document.querySelectorAll(
   ".anchorIniciarSesion"
 );

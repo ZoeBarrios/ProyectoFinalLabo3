@@ -1,3 +1,4 @@
+import { showLoader, stopLoader } from "./loader.js";
 import { createGameCard } from "./components/gameCard.js";
 import { getGames } from "./gamesApiFunctions.js";
 import {
@@ -33,6 +34,8 @@ let obteniendoJuegos = false;
 cargarJuegos();
 export function cargarJuegos(next = undefined) {
   iniciarPaginacion();
+  showLoader(document.querySelector(".listadoJuegos"));
+  gamesEl.style.opacity = "0";
   getGames(next)
     .then((data) => {
       games = data.results;
@@ -40,6 +43,11 @@ export function cargarJuegos(next = undefined) {
       juego_al_azar();
       controlPaginacion();
     })
+    .then(() => {
+      stopLoader();
+      gamesEl.style.opacity = "1";
+    })
+
     .catch((error) => console.log(error));
 }
 
@@ -54,15 +62,16 @@ export function iniciarPaginacion() {
 
 avanzarEl.addEventListener("click", (ev) => {
   ev.preventDefault();
+
   pagina++;
-  window.scrollTo(0, gamesEl.offsetTop - 100);
+  window.scrollTo(0, gamesEl.offsetTop - 200);
   controlPaginacion();
 });
 
 retrocederEl.addEventListener("click", (ev) => {
   ev.preventDefault();
   pagina--;
-  window.scrollTo(0, gamesEl.offsetTop - 100);
+  window.scrollTo(0, gamesEl.offsetTop - 200);
   controlPaginacion();
 });
 
@@ -89,7 +98,7 @@ function controlPaginacion() {
     obtenerJuegos(urlNext);
   }
   let juegosAMostrar = games.slice(pagina * 20, pagina * 20 + 20);
-  console.log(games);
+
   if (
     juegosAMostrar.length == 20 &&
     games.slice((pagina + 1) * 20, (pagina + 1) * 20 + 20) != 0
@@ -106,7 +115,6 @@ function controlPaginacion() {
 export function renderGames(juegosAMostrar) {
   gamesEl.innerHTML = "";
   juegosAMostrar.forEach((game) => {
-    console.log(game.background_image);
     if (game.background_image == null) return;
     const juego = createGameCard(game);
     gamesEl.appendChild(juego);

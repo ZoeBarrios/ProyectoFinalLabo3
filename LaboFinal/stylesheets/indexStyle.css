@@ -494,7 +494,7 @@ header {
   padding: 5px 10px;
   border-radius: 2em;
 }
-.anchorIniciarSesion:hover{
+.anchorIniciarSesion:hover {
   background-color: rgb(129 21 140);
 }
 
@@ -550,6 +550,13 @@ header {
   margin: 50px auto;
   width: 80%;
   font-size: 20px;
+}
+
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .listadoJuegos {
@@ -639,16 +646,14 @@ scrollbar-track {
     grid-template-columns: 1fr 1fr;
   }
 
-.div_input input{
-  padding: 11px 16px;
-  padding-left: 31px;
-}
+  .div_input input {
+    padding: 11px 16px;
+    padding-left: 31px;
+  }
 
-.cont_header nav ul a{
-  text-align: center;
-}
-
-
+  .cont_header nav ul a {
+    text-align: center;
+  }
 }
 
 @media (max-width: 885px) {

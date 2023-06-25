@@ -7,6 +7,7 @@ import {
   fondoExplicacion,
   titulosListado,
   tituloLogo,
+  gamesEl,
 } from "./dom.js";
 const URL = import.meta.env.VITE_API_URL;
 const KEY = import.meta.env.VITE_API_KEY;
@@ -24,6 +25,7 @@ botonesFiltroEl.forEach((boton) => {
 buscadorEl.forEach((buscador) => {
   buscador.addEventListener("keyup", (ev) => {
     if (ev.key === "Enter") {
+      window.scrollTo(0, gamesEl.offsetTop - 200);
       titulosListado.forEach((titulo) => {
         titulo.style.display = "none";
       });
