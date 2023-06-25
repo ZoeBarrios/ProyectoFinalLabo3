@@ -89,7 +89,7 @@ function controlPaginacion() {
     obtenerJuegos(urlNext);
   }
   let juegosAMostrar = games.slice(pagina * 20, pagina * 20 + 20);
-
+  console.log(games);
   if (
     juegosAMostrar.length == 20 &&
     games.slice((pagina + 1) * 20, (pagina + 1) * 20 + 20) != 0
