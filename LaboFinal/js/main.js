@@ -21,6 +21,7 @@ if (localStorage.getItem("logeado") != null) {
 } else {
   anchorIniciarSesionEl.forEach((anchor) => {
     anchor.textContent = "Iniciar sesión";
+    anchor.innerHTML = `Iniciar Sesion `
     anchor.href = "../html/loginRegister.html";
   });
 }
@@ -89,7 +90,7 @@ function controlPaginacion() {
     obtenerJuegos(urlNext);
   }
   let juegosAMostrar = games.slice(pagina * 20, pagina * 20 + 20);
-
+  console.log(games);
   if (
     juegosAMostrar.length == 20 &&
     games.slice((pagina + 1) * 20, (pagina + 1) * 20 + 20) != 0
@@ -104,6 +105,7 @@ function controlPaginacion() {
 }
 
 export function renderGames(juegosAMostrar) {
+  
   gamesEl.innerHTML = "";
   juegosAMostrar.forEach((game) => {
     const juego = createGameCard(game);
@@ -130,6 +132,7 @@ export function renderGames(juegosAMostrar) {
 
 /*FUNCIONALIDAD EN JUEGOS AL AZAR EN DIV DE FONDO*/
 export function juego_al_azar() {
+  
   let juego = games[Math.floor(Math.random() * games.length)];
   let h4el = document.createElement("a");
   h4el.classList.add("categoria");
@@ -142,3 +145,5 @@ export function juego_al_azar() {
 
   contenedor_fondo1.appendChild(link);
 }
+
+

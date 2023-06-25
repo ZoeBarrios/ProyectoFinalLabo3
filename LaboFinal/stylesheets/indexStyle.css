@@ -261,8 +261,8 @@
 }
 
 .fondo1 {
-  padding-top: 250px;
-  padding-bottom: 250px;
+  padding-top: 300px;
+  padding-bottom: 300px;
   background-position: inherit;
   background-size: cover;
   background-repeat: no-repeat;
@@ -319,9 +319,10 @@
 .nav2 ul li a,
 .eliminar {
   text-decoration: none;
-  color: gold;
+  color: white;
   font-weight: bold;
   font-size: 25px;
+  cursor: pointer;
 }
 
 .div_input2 {
@@ -386,7 +387,7 @@ body {
   color: white;
   padding: 10px;
   border-radius: 10px;
-  height: 30em;
+  height: 100%;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -484,8 +485,17 @@ header {
 
 .anchorIniciarSesion {
   background-color: rgb(130, 24, 24);
+  background-color: rgb(22 171 38);
+  background-color: rgb(229 13 216);
+  display: flex;
+
+  align-items: center;
+  text-align: center;
   padding: 5px 10px;
   border-radius: 2em;
+}
+.anchorIniciarSesion:hover{
+  background-color: rgb(129 21 140);
 }
 
 .estilo_link {
@@ -629,9 +639,20 @@ scrollbar-track {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
+.div_input input{
+  padding: 11px 16px;
+  padding-left: 31px;
 }
 
-@media (max-width: 880px) {
+.cont_header nav ul a{
+  text-align: center;
+}
+
+
+}
+
+@media (max-width: 885px) {
   .games {
     grid-template-columns: 1fr 1fr;
   }

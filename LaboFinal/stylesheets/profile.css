@@ -38,6 +38,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   height: 100%;
+  width: 60%;
+  margin: auto;
 }
 
 .listaJuegosFavoritos > .game {
@@ -60,6 +62,14 @@
   cursor: pointer;
 }
 
+@media (max-width:1024px){
+  .listaJuegosFavoritos{
+    width: 60%;
+  }
+}
+
+
+
 @media (max-width: 768px) {
   .header-profile {
     flex-direction: column;
@@ -75,6 +85,7 @@
   .listaJuegosFavoritos {
     flex-direction: column;
     height: 100%;
+    width: 80%;
   }
 
   .listaJuegosFavoritos > .game {
