@@ -66,13 +66,11 @@
   cursor: pointer;
 }
 
-@media (max-width:1024px){
-  .listaJuegosFavoritos{
+@media (max-width: 1024px) {
+  .listaJuegosFavoritos {
     width: 60%;
   }
 }
-
-
 
 @media (max-width: 768px) {
   .header-profile {
@@ -100,5 +98,11 @@
 
   .listaJuegosFavoritos #card {
     height: 27em;
+  }
+}
+
+@media (max-width: 300px) {
+  .listaJuegosFavoritos {
+    width: 100%;
   }
 }
