@@ -1,0 +1,144 @@
+:root {
+  --primary-color: rgb(60, 104, 155);
+}
+body {
+  background: linear-gradient(
+    109.6deg,
+    rgb(20, 30, 48) 11.2%,
+    rgb(36, 59, 85) 91.1%
+  );
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+.error {
+  border-bottom-color: red !important;
+}
+.container-forms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container-register {
+  display: none;
+}
+
+.container-login,
+.container-register {
+  flex-direction: column;
+  width: 40%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(22, 22, 22);
+  border-radius: 8px;
+  color: #fff;
+}
+
+#login,
+#register {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.password-container {
+  position: relative;
+  display: inline-block;
+}
+
+.toggle-password-button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.togglePassword:hover {
+  color: #4e9eff;
+}
+
+.input {
+  line-height: 28px;
+  border: 2px solid transparent;
+  border-bottom-color: #777;
+  padding: 0.2rem 0;
+  outline: none;
+  width: 100%;
+  background-color: transparent;
+  color: #0d0c22;
+  transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  color: white;
+}
+
+.input[type="password"] {
+  width: 100%;
+}
+
+.input:focus,
+input:hover {
+  outline: none;
+  padding: 0.2rem;
+  border-radius: 1rem;
+  border-color: #7a9cc6;
+}
+
+.input::placeholder {
+  color: #777;
+}
+
+.input:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.anchorRegister,
+.anchorLogin {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.anchorRegister:hover,
+.anchorLogin:hover {
+  color: #4e9eff;
+}
+
+.btnLogin,
+.btnRegister {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btnLogin:hover,
+.btnRegister:hover {
+  background-color: #4e9eff;
+}
+
+@media (max-width: 768px) {
+  .container-login,
+  .container-register {
+    width: 80%;
+  }
+}

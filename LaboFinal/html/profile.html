@@ -2,18 +2,41 @@
 <html lang="en">
 
 <head>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../js/loadFavoriteGames.js" defer type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+        integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="../stylesheets/profile.css">
     <link rel="stylesheet" href="../stylesheets/indexStyle.css">
+    <script src='nprogress.js'></script>
+    <link rel='stylesheet' href='nprogress.css' />
+
     <title>Perfil</title>
+    <link rel="icon" href="/LaboFinal/steam.jpg">
+
+
 </head>
 
 <body>
 
-    <h1>Perfil</h1>
-    <button onclick="cerrarSesion()">Cerrar sesion</button>
-    <div class="listaJuegosFavoritos">
+
+    <header class="header-profile">
+        <button class="btn" onclick="history.go(-1)">&#9664; Back</button>
+        <h1 class="nombreUsuario"></h1>
+
+        <button onclick="cerrarSesion()" class="btn">Log out</button>
+    </header>
+
+    <div id="toast-container"></div>
+    <div class="contenedorInfoProfile">
+        <h2 class="tituloInfoProfile"></h2>
+        <div class="listaJuegosFavoritos"></div>
+
 
     </div>
 </body>

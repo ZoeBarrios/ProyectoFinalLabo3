@@ -5,13 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="stylesheets/indexStyle.css" />
-  <title>Movies</title>
+  <link rel="stylesheet" href="stylesheets/loaderStyle.css" />
+
+  <title>STOOM</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
-  <script src="./jquery-latest.js" type="module"></script>
-
+  <link rel="icon" href="steam.jpg">
 
   <link
     href="https://fonts.googleapis.com/css2?family=Corinthia&family=Fira+Sans&family=Inter:wght@200&family=Lora&family=Mada:wght@300&family=Montserrat:wght@100;200&family=Mulish:wght@300&family=Nunito:ital,wght@1,300&family=Open+Sans:ital,wght@1,300;1,800&family=Oswald:wght@500&family=PT+Sans:ital@1&family=Poppins:wght@200&family=Roboto:wght@300&family=Titillium+Web:wght@300&family=Yellowtail&display=swap"
@@ -22,6 +22,22 @@
 
 <body>
 
+  <!--Loader-->
+  <div class="load_container">
+    <div class="loader">
+      <svg class="logo" width="200px" height="200px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <path class="a"
+          d="M24.0152,28.1932c7.0647.0718,8.62,10.6443,16.1734,7.6038,6.3671-2.5628,1.8993-14.0563.181-17.828-2.0731-4.5511-5.4238-6.1232-8.0836-6.15-3.1794-.0324-5.3475,2.73-8.1319,2.7021s-4.8962-2.8344-8.0754-2.8667c-2.66-.027-6.0412,1.476-8.2071,5.9849C6.077,21.3752,1.3768,32.7756,7.6905,35.4672,15.1807,38.66,16.95,28.1215,24.0152,28.1932Z" />
+        <circle class="a" cx="15.608" cy="21.167" r="4.344" />
+        <circle class="a" cx="31.0049" cy="19.2869" r="1.4961" />
+        <circle class="a" cx="34.9108" cy="23.2729" r="1.4961" />
+        <line class="a" x1="15.608" y1="23.4928" x2="15.608" y2="18.8411" />
+        <line class="a" x1="13.2822" y1="21.167" x2="17.9339" y2="21.167" />
+      </svg>
+    </div>
+  </div>
+  <!---->
+
   <header>
 
     <div class="menu_oculto">
@@ -29,18 +45,18 @@
       <div class="contenedor_menu ">
         <nav class="nav2">
           <ul>
-            <li><a href="">Arcade</a></li>
-            <li><a href="">Adventure</a></li>
-            <li><a href="">Fighting</a></li>
-            <li><a href="">Shooter</a></li>
-            <li><a href="/LaboFinal/html/loginRegister.html" class="anchorIniciarSesion">Iniciar Sesion</a></li>
+            <li><a href="#" class="filtro">Arcade </a></li>
+            <li><a href="#" class="filtro">Adventure</a></li>
+            <li><a href="#" class="filtro">Fighting</a></li>
+            <li><a href="#" class="filtro">Shooter</a></li>
+            <li><a href="/LaboFinal/html/loginRegister.html" class="anchorIniciarSesion">Sign in </a></li>
           </ul>
 
 
         </nav>
 
         <div class="div_input2">
-          <i class="fa-solid fa-magnifying-glass lupa2"></i><input type="text" id="buscador" placeholder="Buscar...">
+          <i class="fa-solid fa-magnifying-glass lupa2"></i><input type="text" id="buscador" placeholder="Search...">
         </div>
 
       </div>
@@ -54,34 +70,26 @@
 
 
 
-
-
-
-
-
     <div class="cont_header">
-      <i class="fa-solid fa-bars menu_click"></i>
-      <h1 class="tituloLogo">TuJuego<img class="mando1" src="mando.png" alt="imagen"> </h1>
-      <i class="fa-solid fa-magnifying-glass menu_click"></i>
+      <i class="fa-solid fa-bars  menu_click"></i>
+      <h1 class="tituloLogo">STOOM<img class="mando1" src="steam.jpg" alt="imagen"> </h1>
+      <i class="fa-solid fa-magnifying-glass   menu_click"></i>
       <nav>
         <ul>
-          <a href="" class=" filtro">Arcade</a>
+          <a href="#" class="filtro">Arcade</a>
           <a href="" class="filtro">Adventure</a>
           <a href="" class="filtro">Fighting</a>
           <a href="" class="filtro">Shooter</a>
-          <a href="/LaboFinal/html/loginRegister.html" class="anchorIniciarSesion">Iniciar Sesion</a>
+          <a href="/LaboFinal/html/loginRegister.html" class="anchorIniciarSesion">Sign in </a>
         </ul>
 
 
       </nav>
 
+
       <div class="div_input">
-        <i class="fa-solid fa-magnifying-glass lupa"></i><input type="text" id="buscador" placeholder="Buscar...">
+        <i class="fa-solid fa-magnifying-glass lupa"></i><input type="text" id="buscador" placeholder="Search...">
       </div>
-
-
-
-
 
 
 
@@ -94,36 +102,14 @@
   </header>
 
 
-
-
-
-
-
-
-
-
-
   <div class="fondo1">
     <div class="contenedor_fondo1">
       <h1 class="tituloJuego"><a class="c"></a> </h1>
       <h2 class="fecha_lanzamiento"></h2>
-      <a class="link_info">Ver Info</a>
+      <a class="link_info">More info</a>
 
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   <div id="fondo_explicacion">
@@ -143,43 +129,28 @@
   </div>
 
 
+  <!----
+  <h1 class="tituloSeccion">Juegos</h1>--->
+
+  <div class="juegos_arcade titulo">
+    <h1>Arcade Games</h1>
+  </div>
+  <div class="juegos_adventure titulo">
+    <h1>Adventure Games</h1>
+  </div>
+  <div class="juegos_pelea titulo">
+    <h1>Fighting Games</h1>
+  </div>
+  <div class="juegos_shoter titulo">
+    <h1>Shooter Games</h1>
+  </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <h1 class="tituloSeccion">Juegos</h1>
   <div class="listadoJuegos">
+    <div class="loader-container"></div>
+
     <div class="games">
+
 
     </div>
   </div>
@@ -196,6 +167,7 @@
   </div>
   <div class="ir-arriba">&#708;</div>
 
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
@@ -203,11 +175,46 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
+
+
+
+
+
+
+
+
+
+  <footer>
+    <div class="cont_footer">
+
+      <h4>Copyright © 2023 STOOM.com</h4>
+
+      <div class="cont_githubs">
+        <ul>
+          <a target="_blank" href="https://github.com/ZoeBarrios">Zoe Barrios <i
+              class="fa-brands fa-github github"></i></a>
+          <a target="_blank" href="https://github.com/Lattanxz">Valentin Lattanzio<i
+              class="fa-brands fa-github github"></i></a>
+          <a target="_blank" href="https://github.com/Diego03gGomez">Diego Gomez<i
+              class="fa-brands fa-github github"></i></a>
+          <a target="_blank" href="https://github.com/Aguu57in">Agustin Luzi<i
+              class="fa-brands fa-github github"></i></a>
+        </ul>
+      </div>
+
+
+
+    </div>
+
+  </footer>
+
+
+
+
+
+
+
   <script src="jquery.js" type="module"></script>
-
-
-
-
 
 
   <script src="./irArriba.js" type="module"></script>
