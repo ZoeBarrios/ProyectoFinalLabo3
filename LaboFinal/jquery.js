@@ -1,4 +1,5 @@
 import { gamesEl } from "./js/dom";
+import { showLoader } from "./js/loader";
 
 $(document).ready(function () {
   $(".menu_click").click(function (e) {
@@ -11,6 +12,7 @@ $(document).ready(function () {
 
   $(".filtro").click(function (e) {
     e.preventDefault();
+
     window.scrollTo(0, gamesEl.offsetTop - 200);
     window.$(".filtro").removeClass("estilo_link");
     $(this).addClass("estilo_link");
@@ -18,6 +20,7 @@ $(document).ready(function () {
 
   $(".tituloLogo ").click(function (e) {
     e.preventDefault();
+    window.scrollTo(0, gamesEl.offsetTop - 200);
     $(".filtro").removeClass("estilo_link");
   });
 
