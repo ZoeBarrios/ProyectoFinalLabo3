@@ -2,7 +2,6 @@
   width: 300px;
 } */
 
-
 /* Estilos para la barra de desplazamiento */
 ::-webkit-scrollbar {
   width: 12px; /* Ancho de la barra de desplazamiento */
@@ -13,7 +12,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color:#007aff ; /* Color del "pulgar" de la barra de desplazamiento */
+  background-color: #007aff; /* Color del "pulgar" de la barra de desplazamiento */
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -169,6 +168,10 @@ button.slider-nav {
 div.sliders-indicator {
   bottom: -10px;
 }
+#swiffy-animation {
+  width: 80%;
+  margin: 0 auto 100px auto;
+}
 
 .stores-container {
   display: flex;
@@ -269,12 +272,12 @@ align-items: center;
     padding: 0 40px;
     margin-bottom: 100px;
   }
-  
+
   .slider-container {
     border-radius: 10px;
   }
-  
-  .ir-arriba{
+
+  .ir-arriba {
     text-align: center;
     right: 10%;
     font-size: 1.5em;
@@ -302,18 +305,19 @@ align-items: center;
     padding: 0 20px;
     margin-bottom: 100px;
   }
-  
+
   .slider-container {
     border-radius: 5px;
   }
   button.slider-nav.slider-nav-next {
     right: 7%;
   }
-  
+
   button.slider-nav {
     left: 7%;
   }
-  button.slider-nav::after, button.slider-nav::before {
+  button.slider-nav::after,
+  button.slider-nav::before {
     width: 1rem;
     height: 2rem;
   }
@@ -331,7 +335,7 @@ align-items: center;
   button.slider-nav.slider-nav-next {
     right: 1%;
   }
-  
+
   button.slider-nav {
     left: 1%;
   }
