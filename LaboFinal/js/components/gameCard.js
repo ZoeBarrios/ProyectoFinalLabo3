@@ -38,7 +38,11 @@ export function createGameCard(game) {
   gameEl.innerHTML = `
     <div id="card">
     <div class="div"  >
-      <img src="${game.background_image}" alt="${game.name}" class="game-img" />
+    ${
+      game.background_image != null
+        ? `<img src="${game.background_image}" alt="${game.name}" class="background-img-game" />`
+        : "<div>Nothing to see</div>"
+    }
       ${contenedorLista.outerHTML}
       <div>
       <div class="game-info">

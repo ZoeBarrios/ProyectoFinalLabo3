@@ -11,6 +11,7 @@ export async function loadFavoriteGames() {
   const user = JSON.parse(localStorage.getItem("logeado"));
   const usuarioId = user.id;
 
+  console.log(user);
   const userName = user.user.toUpperCase();
   nombreUsuario.innerHTML = userName;
 

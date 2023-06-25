@@ -4,6 +4,7 @@ import "noty/lib/themes/mint.css";
 import { deleteOne } from "../vercelVKFuntions.js";
 import { createGameCard } from "./gameCard.js";
 export function createGameCardProfile(juegosFavoritos) {
+  const user = JSON.parse(localStorage.getItem("logeado"));
   const botonEliminar = document.createElement("a");
   botonEliminar.classList.add("eliminar");
   const juegoFavoritoCreado = createGameCard(juegosFavoritos.juegoFavorito);
@@ -14,7 +15,7 @@ export function createGameCardProfile(juegosFavoritos) {
   botonEliminar.classList.add("botonEliminar");
   botonEliminar.addEventListener("click", async () => {
     const id = juegosFavoritos.juegoFavorito.id;
-    deleteOne("games", id)
+    deleteOne("games", id, user.id)
       .then(() => {
         new Noty({
           theme: "mint",
