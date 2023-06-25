@@ -37,8 +37,9 @@ export function createGameCard(game) {
   gameEl.classList.add("game");
   gameEl.innerHTML = `
     <div id="card">
-    <div class="div"  >
-      <img src="${game.background_image}" alt="${game.name}" class="game-img" />
+    <div class="div">
+    <img src="${game.background_image}" alt="${game.name}" class="game-img" />
+ 
       ${contenedorLista.outerHTML}
       <div>
       <div class="game-info">

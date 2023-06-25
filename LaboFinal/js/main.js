@@ -108,6 +108,8 @@ export function renderGames(juegosAMostrar) {
   
   gamesEl.innerHTML = "";
   juegosAMostrar.forEach((game) => {
+    console.log(game.background_image);
+    if (game.background_image == null) return;
     const juego = createGameCard(game);
     gamesEl.appendChild(juego);
   });
@@ -139,7 +141,7 @@ export function juego_al_azar() {
   h4el.textContent = ` ${juego.genres[0]?.name || ""}`;
   fondoDiv.style.backgroundImage = ` linear-gradient(to right, rgba(20, 30, 48, 0.7), rgba(36,59,85,0.7)), url(${juego.background_image})`;
   tituloH1.textContent = juego.name;
-  fecha.textContent = `Estrenada : ${juego.released}`;
+  fecha.textContent = `Estrenada : ${juego.released || "No hay información"}`;
   tituloH1.appendChild(h4el);
   link.href = `../html/game.html?id=${juego.id}`;
 

@@ -39,7 +39,10 @@ function agregarFavoritos() {
     let yaExiste = false;
 
     if (juegos) {
-      yaExiste = juegos.find((juego) => juego.juegoId == juegoId);
+      yaExiste = juegos.find(
+        (juego) =>
+          juego.juegoId == juegoId && juego.usuarioId.id == usuarioId.id
+      );
     }
 
     if (juegoFavorito == undefined) {

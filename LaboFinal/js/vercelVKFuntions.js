@@ -27,8 +27,18 @@ export async function pushDB(key, data) {
     .catch((err) => console.log(err));
 }
 
-export async function deleteOne(key, id) {
-  const elements = await getAll(key);
-  const elementsUpdated = elements.filter((element) => element.juegoId != id);
-  pushDB(key, elementsUpdated).catch((err) => console.log(err));
+export async function deleteOne(key, id, idUsuario) {
+  let elements = await getAll(key);
+  const elementRemove = elements.filter(
+    (element) =>
+      element.juegoId == id && element.usuarioId.id.trim() == idUsuario.trim()
+  );
+  if (elementRemove.length > 0) {
+    const index = elements.indexOf(elementRemove[0]);
+    if (index > -1) {
+      elements.splice(index, 1);
+    }
+  }
+
+  pushDB(key, elements).catch((err) => console.log(err));
 }

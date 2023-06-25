@@ -13,7 +13,9 @@ export function createGameInfo(game) {
     botonFavorito.style.display = "none";
   }
   const gameInfo = document.createElement("div");
+
   gameInfo.classList.add("game-info__container");
+
   gameInfo.innerHTML = `
 
   <div id="card">
