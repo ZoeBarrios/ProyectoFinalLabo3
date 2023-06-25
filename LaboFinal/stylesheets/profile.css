@@ -50,6 +50,10 @@
   height: 27em;
 }
 
+.botonEliminar:hover {
+  cursor: pointer;
+}
+
 .btn {
   padding: 10px 30px;
   color: #2a475e;

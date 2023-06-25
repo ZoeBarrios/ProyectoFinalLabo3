@@ -74,7 +74,7 @@ formLogin.addEventListener("submit", async (e) => {
   } else {
     new Noty({
       theme: "mint",
-      text: "Usuario o contraseña incorrectos",
+      text: "Incorrect username, email, or password",
       type: "error",
       timeout: 2000,
     }).show();
@@ -111,7 +111,7 @@ formRegister.addEventListener("submit", async (e) => {
   if (yaExiste) {
     new Noty({
       theme: "mint",
-      text: "El usuario ya existe",
+      text: "The user already exists",
       type: "error",
       timeout: 2000,
     }).show();
@@ -119,7 +119,7 @@ formRegister.addEventListener("submit", async (e) => {
     if (password.value !== passwordConfirmation.value) {
       new Noty({
         theme: "mint",
-        text: "Las contraseñas no coinciden",
+        text: "Passwords do not match",
         type: "error",
         timeout: 2000,
       }).show();
@@ -137,7 +137,7 @@ formRegister.addEventListener("submit", async (e) => {
 
     new Noty({
       theme: "mint",
-      text: "Usuario creado correctamente",
+      text: "User created successfully",
       type: "success",
       timeout: 2000,
     }).show();
@@ -154,7 +154,7 @@ function validate(inputs) {
     if (input.value.trim() === "") {
       new Noty({
         theme: "mint",
-        text: "Todos los campos son obligatorios",
+        text: "All fields are required",
         type: "error",
         timeout: 2000,
       }).show();

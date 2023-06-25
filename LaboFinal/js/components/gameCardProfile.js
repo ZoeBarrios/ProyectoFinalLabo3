@@ -11,7 +11,7 @@ export function createGameCardProfile(juegosFavoritos) {
   const gameInfo = juegoFavoritoCreado.querySelector(".game-info");
   const anchorEl = gameInfo.querySelector("a");
 
-  botonEliminar.innerText = `Eliminar de favoritos`;
+  botonEliminar.innerHTML = `<i class="fa-solid fa-trash"></i>`;
   botonEliminar.classList.add("botonEliminar");
   botonEliminar.addEventListener("click", async () => {
     const id = juegosFavoritos.juegoFavorito.id;

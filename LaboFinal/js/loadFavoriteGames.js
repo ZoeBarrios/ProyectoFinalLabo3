@@ -11,7 +11,6 @@ export async function loadFavoriteGames() {
   const user = JSON.parse(localStorage.getItem("logeado"));
   const usuarioId = user.id;
 
-  console.log(user);
   const userName = user.user.toUpperCase();
   nombreUsuario.innerHTML = userName;
 
@@ -22,9 +21,9 @@ export async function loadFavoriteGames() {
   );
 
   if (juegosUsuario.length == 0) {
-    tituloInfoProfile.innerHTML = `<h1 class="tituloSeccion">No hay juegos favoritos</h1>`;
+    tituloInfoProfile.innerHTML = `<h1 class="tituloSeccion">No games in favorites</h1>`;
   } else {
-    tituloInfoProfile.innerHTML = `<h1 class="tituloSeccion">Juegos favoritos</h1>`;
+    tituloInfoProfile.innerHTML = `<h1 class="tituloSeccion">Favorites games</h1>`;
     juegosUsuario.forEach((juegosFavoritos) => {
       listaJuegosFavoritos.appendChild(createGameCardProfile(juegosFavoritos));
     });

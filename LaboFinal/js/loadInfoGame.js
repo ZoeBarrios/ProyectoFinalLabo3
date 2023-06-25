@@ -48,7 +48,7 @@ function agregarFavoritos() {
     if (juegoFavorito == undefined) {
       new Noty({
         theme: "mint",
-        text: "No se pudo agregar a favoritos",
+        text: "Unable to add to favorites",
         type: "error",
         timeout: 2000,
       }).show();
@@ -58,7 +58,7 @@ function agregarFavoritos() {
     if (yaExiste) {
       new Noty({
         theme: "mint",
-        text: "Juego ya agregado a favoritos",
+        text: "Game already added to favorites",
         type: "error",
         timeout: 2000,
       }).show();
@@ -75,7 +75,7 @@ function agregarFavoritos() {
     pushDB("games", juegos).then(() => {
       new Noty({
         theme: "mint",
-        text: "Juego agregado a favoritos",
+        text: "Game added to favorites",
         type: "success",
         timeout: 2000,
       }).show();

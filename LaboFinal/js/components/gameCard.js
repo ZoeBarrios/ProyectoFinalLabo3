@@ -43,7 +43,7 @@ export function createGameCard(game) {
       ${contenedorLista.outerHTML}
       <div>
       <div class="game-info">
-        <a href="../html/game.html?id=${game.id}">Ver más</a>
+        <a href="../html/game.html?id=${game.id}">More info</a>
         <h3>${game.name}</h3>
         <span>${game.released || ""}</span>
         <span><i class="fa-solid fa-star estrella"></i> ${
