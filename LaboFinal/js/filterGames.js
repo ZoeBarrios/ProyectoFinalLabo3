@@ -40,6 +40,7 @@ buscadorEl.forEach((buscador) => {
 
 tituloLogo.addEventListener("click", (ev) => {
   ev.preventDefault();
+
   retrocederEl.style.display = "block";
   avanzarEl.style.display = "block";
   cargarJuegos();

@@ -14,7 +14,7 @@ export var opts = {
   direction: 1, // 1: clockwise, -1: counterclockwise
   color: "#7989fb", // CSS color or array of colors
   fadeColor: "transparent", // CSS color or array of colors
-  top: "150%", // Top position relative to parent
+  top: "100%", // Top position relative to parent
   left: "50%", // Left position relative to parent
   shadow: "0 0 1px transparent", // Box-shadow for the lines
   zIndex: 1, // The z-index (defaults to 2e9)

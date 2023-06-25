@@ -260,6 +260,12 @@
   background-color: #080f28;
 }
 
+.loader-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
 .fondo1 {
   padding-top: 300px;
   padding-bottom: 300px;
