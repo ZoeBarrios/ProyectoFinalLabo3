@@ -266,6 +266,7 @@
   background-position: inherit;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
 }
 .contenedor_fondo1 {
   /* background-color: brown;*/
@@ -429,6 +430,7 @@ body {
 
 .games {
   margin: auto;
+  position: relative;
   width: 80%;
   /* background-color: brown;*/
   display: grid;
@@ -547,16 +549,10 @@ header {
 .juegos_pelea,
 .juegos_shoter {
   /* background-color: red;*/
+
   margin: 50px auto;
   width: 80%;
   font-size: 20px;
-}
-
-.spinner {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .listadoJuegos {

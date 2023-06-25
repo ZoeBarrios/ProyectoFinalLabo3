@@ -34,7 +34,7 @@ let obteniendoJuegos = false;
 cargarJuegos();
 export function cargarJuegos(next = undefined) {
   iniciarPaginacion();
-  showLoader(document.querySelector(".listadoJuegos"));
+  showLoader(document.querySelector(".fondo1"));
   gamesEl.style.opacity = "0";
   getGames(next)
     .then((data) => {
