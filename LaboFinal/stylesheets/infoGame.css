@@ -156,7 +156,7 @@ h3 {
 }
 
 .swiffy-slider {
-  padding: 0 200px;
+  padding: 0 240px;
   margin-bottom: 100px;
 }
 
@@ -165,11 +165,11 @@ h3 {
 }
 
 button.slider-nav.slider-nav-next {
-  right: 20%;
+  right: 19%;
 }
 
 button.slider-nav {
-  left: 20%;
+  left: 19%;
 }
 
 div.sliders-indicator {
