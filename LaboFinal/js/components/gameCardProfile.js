@@ -19,7 +19,7 @@ export function createGameCardProfile(juegosFavoritos) {
       .then(() => {
         new Noty({
           theme: "mint",
-          text: "Juego eliminado de favoritos",
+          text: "The game has been removed from favorites.",
           type: "success",
           timeout: 1000,
         }).show();
