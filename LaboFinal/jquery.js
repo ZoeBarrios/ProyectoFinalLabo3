@@ -1,5 +1,4 @@
 import { gamesEl } from "./js/dom";
-import { showLoader } from "./js/loader";
 
 $(document).ready(function () {
   $(".menu_click").click(function (e) {

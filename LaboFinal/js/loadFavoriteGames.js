@@ -31,3 +31,8 @@ export async function loadFavoriteGames() {
   }
   stopLoader();
 }
+
+const botonSlider = document.querySelector(".slider-nav-next");
+botonSlider.addEventListener("click", () => {
+  alert("hola");
+});
