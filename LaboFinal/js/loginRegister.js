@@ -60,12 +60,7 @@ formLogin.addEventListener("submit", async (e) => {
 
   let yaExiste = false;
   if (usuarios) {
-    yaExiste = usuarios.find(
-      (usuario) =>
-        usuario.email === email.value &&
-        usuario.password === password.value &&
-        usuario.user === user.value
-    );
+    yaExiste = usuarios.find((usuario) => usuario.email === email.value);
   }
 
   if (yaExiste) {
@@ -103,12 +98,7 @@ formRegister.addEventListener("submit", async (e) => {
 
   let yaExiste = false;
   if (usuarios) {
-    yaExiste = usuarios.find(
-      (usuario) =>
-        usuario.email === email.value &&
-        usuario.password === password.value &&
-        usuario.user === userInput.value
-    );
+    yaExiste = usuarios.find((usuario) => usuario.email === email.value);
   }
 
   if (yaExiste) {
