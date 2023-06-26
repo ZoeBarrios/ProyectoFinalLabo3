@@ -40,7 +40,6 @@ header {
 .game-info__container {
   width: 80%;
   margin: 0 auto;
- 
 }
 
 .cont_header {
@@ -53,7 +52,6 @@ header {
 
 .game-info {
   margin: 20px;
- 
 }
 
 .trailer-container {
@@ -92,15 +90,6 @@ header {
   font-size: 1.2em;
 }
 
-
-
-
-
-
-
-
-
-
 p {
   text-align: justify;
 }
@@ -138,6 +127,13 @@ h3 {
   border-radius: 10px;
   cursor: pointer;
   margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #2a475e;
+  color: gold;
+  box-shadow: 1px solid gold;
 }
 
 .ir-arriba {
@@ -252,11 +248,8 @@ align-items: center;
   margin-bottom: 50px;
 }
 
-#card{
-
+#card {
 }
-
-
 
 @media (max-width: 1024px) {
   .stores {

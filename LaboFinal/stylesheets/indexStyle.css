@@ -262,6 +262,7 @@
 
 .loader-container {
   position: relative;
+  margin-top: 5em;
   height: 100%;
   width: 100%;
 }
@@ -285,7 +286,11 @@
 }
 
 .tituloLogo {
+  transition: all 0.3s ease-in-out;
+}
+.tituloLogo:hover {
   cursor: pointer;
+  transform: scale(1.1) rotate(-2deg);
 }
 
 .contenedor_fondo1 h2 {

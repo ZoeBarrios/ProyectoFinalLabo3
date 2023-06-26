@@ -1,3 +1,6 @@
+*{
+  font-family: "Roboto", sans-serif;
+}
 .header-profile {
   margin: 0;
   padding: 0;
@@ -64,6 +67,12 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #2a475e;
+  color: gold;
 }
 
 @media (max-width: 1024px) {
