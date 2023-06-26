@@ -15,6 +15,8 @@ export async function loadFavoriteGames() {
   nombreUsuario.innerHTML = userName;
 
   showLoader(listaJuegosFavoritos);
+  const spinner = document.querySelector(".spinner");
+  spinner.style.top = "50%";
   const juegosFavoritos = await getAll("games");
 
   const juegosUsuario = juegosFavoritos.filter(
@@ -29,5 +31,6 @@ export async function loadFavoriteGames() {
       listaJuegosFavoritos.appendChild(createGameCardProfile(juegosFavoritos));
     });
   }
+  spinner.style.top = "150%";
   stopLoader();
 }
