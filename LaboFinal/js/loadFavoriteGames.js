@@ -1,4 +1,4 @@
-import { showLoader, stopLoader, opts } from "./loader.js";
+import { showLoader, stopLoader } from "./loader.js";
 import { createGameCardProfile } from "./components/gameCardProfile";
 import { nombreUsuario } from "./dom";
 import { getAll } from "./vercelVKFuntions";
