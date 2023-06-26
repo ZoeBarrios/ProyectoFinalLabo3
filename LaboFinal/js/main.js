@@ -141,6 +141,9 @@ export function renderGames(juegosAMostrar) {
 /*FUNCIONALIDAD EN JUEGOS AL AZAR EN DIV DE FONDO*/
 export function juego_al_azar() {
   let juego = games[Math.floor(Math.random() * games.length)];
+  while (juego.background_image == null) {
+    juego = games[Math.floor(Math.random() * games.length)];
+  }
   let h4el = document.createElement("a");
   h4el.classList.add("categoria");
   h4el.textContent = ` ${juego.genres[0]?.name || ""}`;

@@ -13,14 +13,14 @@ $(document).ready(function () {
   $(".filtro").click(function (e) {
     e.preventDefault();
 
-    window.scrollTo(0, gamesEl.offsetTop - 200);
+    window.scrollTo(0, gamesEl.offsetTop - 300);
     window.$(".filtro").removeClass("estilo_link");
     $(this).addClass("estilo_link");
   });
 
   $(".tituloLogo ").click(function (e) {
     e.preventDefault();
-    window.scrollTo(0, gamesEl.offsetTop - 200);
+    window.scrollTo(0, 0);
     $(".filtro").removeClass("estilo_link");
   });
 
